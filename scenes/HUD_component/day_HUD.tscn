@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuuth32kb1cfr"]
 
 [ext_resource type="Texture2D" uid="uid://bycak7gtbx7ar" path="res://Assets/HUD/Day Display.png" id="1_4ilqj"]
+[ext_resource type="Script" path="res://scripts/UI_script/day_hud.gd" id="2_dayhud"]
 
 [node name="Control" type="Control" unique_id=1101931803]
 layout_mode = 3
@@ -9,18 +10,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_dayhud")
 
 [node name="CoinDisplay" type="Sprite2D" parent="." unique_id=980223242]
-position = Vector2(749.87494, 456.25)
+position = Vector2(-262, -154)
 scale = Vector2(0.34228507, 0.34228516)
 texture = ExtResource("1_4ilqj")
 centered = false
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="." unique_id=1778196503]
 layout_mode = 0
-offset_left = 1020.0
-offset_top = 597.0
-offset_right = 1135.0
-offset_bottom = 642.0
+offset_left = 15.0
+offset_top = -14.0
+offset_right = 130.0
+offset_bottom = 31.0
 theme_override_font_sizes/font_size = 32
 text = "0"
+metadata/_edit_group_ = true

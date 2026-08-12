@@ -24,6 +24,7 @@ Craft="*res://scripts/managers/craft_manager.gd"
 CropDB="*uid://15bnqo8g1duw"
 MonsterPen="*uid://clbodqlvfqpr8"
 SellUI="*uid://ciq680wjyt4dq"
+Music="*res://scenes/Managers/music_manager.tscn"
 
 [display]
 

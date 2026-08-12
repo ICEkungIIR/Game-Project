@@ -16,3 +16,4 @@ class_name Recipe
 @export var ingredients: Array[IngredientEntry] = []
 @export var result_amount: int = 1
 @export var sell_price: int = 15
+@export var icon: Texture2D

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://fumpk4cb8etj"]
+
+[ext_resource type="Script" uid="uid://bnxcxj6s7amoe" path="res://scripts/UI_script/inventory.gd" id="1_krngk"]
+[ext_resource type="Texture2D" uid="uid://p1d77imagc0l" path="res://Assets/HUD/inventory Background Removed.png" id="2_kpdmy"]
+
+[node name="Inventory" type="Control" unique_id=1317154820]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="inventory" type="Panel" parent="." unique_id=1783899039]
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -639.5
+offset_top = -156.5
+offset_right = 639.5
+offset_bottom = 156.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_krngk")
+
+[node name="InventoryBackgroundRemoved" type="Sprite2D" parent="inventory" unique_id=1057052828]
+position = Vector2(644, 166)
+texture = ExtResource("2_kpdmy")
+
+[node name="MarginContainer" type="MarginContainer" parent="inventory" unique_id=1759379531]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="inventory/MarginContainer" unique_id=1526885767]
+layout_mode = 2
+columns = 7

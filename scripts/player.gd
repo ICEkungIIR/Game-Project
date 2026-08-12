@@ -42,6 +42,13 @@ func _play_idle_animation() -> void:
 func _ready():
 	Inventory.add_item("carrot",3)
 	Inventory.add_item("milk",3)
+	# TEMP: carrot has no icon yet (no art asset), and "milk" isn't a crop
+	# so CropDB can't resolve it at all — using wheat/potato here instead
+	# since those already have icon art, just to verify bag+hotbar+drag work.
+	Inventory.add_item("wheat", 5)
+	Inventory.add_item("potato", 5)
+	Inventory.set_hotbar_slot(0, "wheat")
+	Inventory.set_hotbar_slot(1, "potato")
 	#print(Inventory.items)
 	#print(Money.spend(200))
 	#print(Money.amount)

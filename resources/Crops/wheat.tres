@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://c6yuhdxk858dn"]
 
+[ext_resource type="Texture2D" uid="uid://bc6xq7l063yml" path="res://Assets/environment/wheat.png" id="1_n5yeo"]
 [ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/crop_data.gd" id="1_wheat"]
 
 [resource]
@@ -8,3 +9,4 @@ crop_id = "wheat"
 days_to_grow = 3
 harvest_yield = 2
 sell_price = 5
+icon = ExtResource("1_n5yeo")

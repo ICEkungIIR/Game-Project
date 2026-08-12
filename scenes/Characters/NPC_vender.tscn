@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3giulagai5uo" path="res://scripts/vender_npc.gd" id="1_7g3af"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Assets/icon.svg" id="1_650q4"]
+[ext_resource type="Texture2D" uid="uid://bbcmp4kyp3nuk" path="res://Assets/HUD/tooltip_01.png" id="3_ksi01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnolj"]
 size = Vector2(130, 128)
@@ -19,9 +20,11 @@ texture = ExtResource("1_650q4")
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_dnolj")
 
-[node name="PromptLabel" type="Label" parent="." unique_id=642190337]
-offset_left = 72.0
-offset_top = -12.0
-offset_right = 167.65218
-offset_bottom = 28.0
-text = "Press E"
+[node name="PromptLabel" type="TextureRect" parent="." unique_id=1303803089]
+visible = false
+offset_left = 32.0
+offset_top = -96.0
+offset_right = 338.0
+offset_bottom = 108.0
+texture = ExtResource("3_ksi01")
+expand_mode = 1

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://bb08e2d1pacav"]
 
+[ext_resource type="Texture2D" uid="uid://bc6xq7l063yml" path="res://Assets/environment/wheat.png" id="1_hl10j"]
 [ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/crop_data.gd" id="1_ty0hd"]
 
 [resource]
@@ -8,4 +9,5 @@ crop_id = "tomato"
 days_to_grow = 4
 harvest_yield = 3
 sell_price = 10
+icon = ExtResource("1_hl10j")
 metadata/_custom_type_script = "uid://coq65bp31wu6p"

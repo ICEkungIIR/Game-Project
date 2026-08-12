@@ -7,6 +7,7 @@ extends Node2D
 func _ready() -> void:
 	Craft.crafted.connect(_on_crafted)
 	Craft.craft_failed.connect(_on_craft_failed)
+	Music.play_track(Music.farm_track)
 
 
 func _on_crafted(recipe_id: String, amount: int) -> void:

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dqahhaehgnytg"]
 
+[ext_resource type="Texture2D" uid="uid://bd4n7p14ytn61" path="res://Assets/environment/Plants.png" id="1_6mwcx"]
 [ext_resource type="Script" uid="uid://cusertu4hk4d5" path="res://scripts/managers/ingredient_entry.gd" id="1_ltbg6"]
 [ext_resource type="Script" uid="uid://boaen1ci0mbxr" path="res://scripts/managers/recipe.gd" id="1_r43gh"]
 
@@ -16,4 +17,5 @@ script = ExtResource("1_r43gh")
 recipe_id = "soup"
 ingredients = Array[ExtResource("1_ltbg6")]([SubResource("Resource_sqlx5"), SubResource("Resource_gd7pt")])
 sell_price = 30
+icon = ExtResource("1_6mwcx")
 metadata/_custom_type_script = "uid://boaen1ci0mbxr"
