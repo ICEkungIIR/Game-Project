@@ -4,3 +4,6 @@
 
 # macOS
 .DS_Store
+
+# scratch export staging (final web build lives in docs/game)
+/web_build/

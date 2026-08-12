@@ -13,16 +13,18 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://scenes/saved_world.tscn")
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("")
+	# TODO: Credits.tscn doesn't exist yet — build it, then set the path here.
+	print("Credits scene not built yet")
 
 
 func _on_setting_pressed() -> void:
-	get_tree().change_scene_to_file("")
+	# TODO: Setting.tscn doesn't exist yet — build it, then set the path here.
+	print("Setting scene not built yet")
 
 
 func _on_exit_pressed() -> void:
-	get_tree().change_scene_to_file("")
+	get_tree().quit()
