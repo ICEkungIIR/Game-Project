@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c40ve2ferd5cb"]
+
+[ext_resource type="PackedScene" uid="uid://cxjqmp8v1n0j2" path="res://scenes/HUD_component/coin_HUD.tscn" id="1_5ip4n"]
+[ext_resource type="PackedScene" uid="uid://3invk7p4lps5" path="res://scenes/HUD_component/time_HUD.tscn" id="2_l8xe2"]
+[ext_resource type="PackedScene" uid="uid://cuuth32kb1cfr" path="res://scenes/HUD_component/day_HUD.tscn" id="3_0qpk7"]
+[ext_resource type="PackedScene" uid="uid://cgyoeqlni7dl3" path="res://scenes/HUD_component/hotbar_HUD.tscn" id="4_ucsqe"]
+
+[node name="HUD" type="Control" unique_id=1946372426]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Coin" parent="." unique_id=1101931803 instance=ExtResource("1_5ip4n")]
+layout_mode = 1
+offset_left = 203.0
+offset_top = 87.0
+offset_right = 203.0
+offset_bottom = 87.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=806570931]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.88000005
+anchor_top = 0.081
+anchor_right = 0.88000005
+anchor_bottom = 0.081
+offset_left = 0.39990234
+offset_top = -0.48000336
+offset_right = 203.3999
+offset_bottom = 204.51999
+
+[node name="day" parent="VBoxContainer" unique_id=1589457978 instance=ExtResource("2_l8xe2")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="time" parent="VBoxContainer" unique_id=1954763998 instance=ExtResource("3_0qpk7")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Hotbar" parent="." unique_id=1421335916 instance=ExtResource("4_ucsqe")]
+layout_mode = 1
+offset_left = 938.0
+offset_top = 1027.0
+offset_right = 899.0
+offset_bottom = 1009.0

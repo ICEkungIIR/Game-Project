@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://3invk7p4lps5"]
+
+[ext_resource type="Texture2D" uid="uid://cy7ksc1576nil" path="res://Assets/HUD/Time Display.png" id="1_eyfuk"]
+
+[node name="Control" type="Control" unique_id=1101931803]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CoinDisplay" type="Sprite2D" parent="." unique_id=980223242]
+position = Vector2(614, 347.00003)
+scale = Vector2(0.34228507, 0.34228516)
+texture = ExtResource("1_eyfuk")
+offset = Vector2(960, 540)
+
+[node name="Label" type="Label" parent="." unique_id=1778196503]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 498.0
+offset_right = 1075.0
+offset_bottom = 543.0
+theme_override_font_sizes/font_size = 32
+text = "0"
