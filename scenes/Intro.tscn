@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmtxa1p6acian"]
 
-[ext_resource type="Script" uid="uid://80y64lpds5x5" path="res://scripts/UI_script/Main_Menu.gd" id="1_hc7eg"]
+[ext_resource type="Script" uid="uid://80y64lpds5x5" path="res://scripts/UI_script/Intro_script.gd" id="1_hc7eg"]
 [ext_resource type="VideoStream" uid="uid://ciahifbbfiu3l" path="res://Assets/Tavern.ogv" id="2_aqbct"]
 
 [node name="Intro" type="Node2D" unique_id=1133366107]
