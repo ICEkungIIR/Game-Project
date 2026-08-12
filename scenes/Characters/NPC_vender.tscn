@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dw4ntnxelh4de"]
+
+[ext_resource type="Script" uid="uid://c3giulagai5uo" path="res://scripts/vender_npc.gd" id="1_7g3af"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Assets/icon.svg" id="1_650q4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnolj"]
+size = Vector2(130, 128)
+
+[node name="Area2D" type="Area2D" unique_id=88416504]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_7g3af")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=103802873]
+physics_interpolation_mode = 1
+position = Vector2(1, 0)
+texture = ExtResource("1_650q4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751922010]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_dnolj")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=642190337]
+offset_left = 72.0
+offset_top = -12.0
+offset_right = 167.65218
+offset_bottom = 28.0
+text = "Press E"

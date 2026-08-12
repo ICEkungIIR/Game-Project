@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://c6yuhdxk858dn"]
+
+[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/crop_data.gd" id="1_wheat"]
+
+[resource]
+script = ExtResource("1_wheat")
+crop_id = "wheat"
+days_to_grow = 3
+harvest_yield = 2
+sell_price = 5

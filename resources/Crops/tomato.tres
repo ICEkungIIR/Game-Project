@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://bb08e2d1pacav"]
+
+[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/crop_data.gd" id="1_ty0hd"]
+
+[resource]
+script = ExtResource("1_ty0hd")
+crop_id = "tomato"
+days_to_grow = 4
+harvest_yield = 3
+sell_price = 10
+metadata/_custom_type_script = "uid://coq65bp31wu6p"

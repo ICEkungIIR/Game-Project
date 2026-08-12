@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://ciq680wjyt4dq"]
+
+[ext_resource type="Script" uid="uid://b52snv55124sk" path="res://scripts/UI_script/SellUI.gd" id="1_sellui"]
+
+[node name="Selling_UI" type="Control" unique_id=910135335]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sellui")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=765478549]
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=461131653]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="item_list_container" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=23814195]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 268.0
+offset_right = 571.0
+offset_bottom = 626.0
+alignment = 1
+
+[node name="item_list" type="Label" parent="CanvasLayer/Panel/item_list_container" unique_id=252709063]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Item List"
+
+[node name="Item_box" type="HBoxContainer" parent="CanvasLayer/Panel/item_list_container" unique_id=397718677]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(-1, 70)
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+
+[node name="item_img" type="Label" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1247378072]
+layout_mode = 2
+text = "item_img"
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1860729012]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(0, 0)
+layout_mode = 2
+
+[node name="item_name" type="Label" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=529211371]
+layout_mode = 2
+text = "item_1"
+
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=871216233]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(0, 0)
+layout_mode = 2
+
+[node name="Sell" type="Button" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1742324379]
+layout_mode = 2
+text = "Sell"
+
+[node name="close_button" type="Button" parent="CanvasLayer/Panel" unique_id=1551710506]
+layout_mode = 1
+offset_right = 109.0
+offset_bottom = 94.0
+text = "Close"
+
+[node name="Sell_container" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1165140652]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 31.0
+offset_right = 1132.0
+offset_bottom = 612.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Sell_container" unique_id=494382484]
+layout_mode = 2
+size_flags_vertical = 10
+size_flags_stretch_ratio = 6.0
+
+[node name="Total" type="Label" parent="CanvasLayer/Panel/Sell_container/HBoxContainer" unique_id=389564705]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 10.0
+text = "Total"
+
+[node name="Coin_amount" type="Label" parent="CanvasLayer/Panel/Sell_container/HBoxContainer" unique_id=330067555]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 10.0
+text = "<coin amount>"
+
+[node name="sell_button" type="Button" parent="CanvasLayer/Panel/Sell_container" unique_id=568816414]
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Sell all"
