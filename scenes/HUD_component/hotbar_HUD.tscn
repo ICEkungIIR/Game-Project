@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cgyoeqlni7dl3"]
+
+[ext_resource type="Texture2D" uid="uid://k0dsj3puaf5q" path="res://Assets/HUD/Hotbar.png" id="1_w84nn"]
+[ext_resource type="Script" path="res://scripts/UI_script/hotbar_hud.gd" id="2_hotbarhud"]
+
+[node name="Control" type="Control" unique_id=1421335916]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_hotbarhud")
+
+[node name="Hotbar" type="Sprite2D" parent="." unique_id=459337370]
+scale = Vector2(0.5341797, 0.5341797)
+texture = ExtResource("1_w84nn")

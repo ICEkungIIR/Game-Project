@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://dbeb0bk6pq66e" path="res://scripts/UI_script/menu_button_effect.gd" id="5_13sgg"]
 [ext_resource type="Texture2D" uid="uid://dogt5llvpryfp" path="res://Assets/Mainmenu/Exit.png" id="5_g3eks"]
 
-[node name="Node2D" type="Node2D" unique_id=827773846]
+[node name="menu" type="Node2D" unique_id=827773846]
 script = ExtResource("1_yqeox")
 
 [node name="background" type="TextureRect" parent="." unique_id=2111832323]
@@ -84,5 +84,5 @@ script = ExtResource("5_13sgg")
 [connection signal="pressed" from="UI/btnNewgame" to="." method="_on_btn_newgame_pressed"]
 [connection signal="pressed" from="UI/btnContinue" to="." method="_on_btn_continue_pressed"]
 [connection signal="pressed" from="UI/btnsetting" to="." method="_on_btn_option_pressed"]
-[connection signal="pressed" from="UI/btnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="UI/btnExit" to="." method="_on_btn_credit_pressed"]
+[connection signal="pressed" from="UI/btnExit" to="." method="_on_btn_exit_pressed"]

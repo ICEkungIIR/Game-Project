@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tavern of Twilight"
-run/main_scene="uid://bmtxa1p6acian"
+run/main_scene="uid://b56f3wjwndvci"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
@@ -24,6 +24,7 @@ Craft="*res://scripts/managers/craft_manager.gd"
 CropDB="*uid://15bnqo8g1duw"
 MonsterPen="*uid://clbodqlvfqpr8"
 SellUI="*uid://ciq680wjyt4dq"
+Music="*res://scenes/Managers/music_manager.tscn"
 
 [display]
 

@@ -227,6 +227,28 @@ main { position: relative; z-index: 6; }
   display: block;
   background: #000;
 }
+.open-in-tab {
+  margin-top: 12px;
+  text-align: center;
+}
+.open-in-tab a {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: transparent;
+  color: var(--c97a3a);
+  border: 2px solid var(--parchment-dim);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.open-in-tab a:hover, .open-in-tab a:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--ember-bright);
+  color: var(--ember-bright);
+}
 .play-hint {
   margin-top: 20px;
   font-family: var(--font-mono);

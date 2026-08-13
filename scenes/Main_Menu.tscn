@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dmtck32iqrkad"]
+[gd_scene format=3 uid="uid://dck5nlfdof38o"]
 
-[ext_resource type="Script" uid="uid://80y64lpds5x5" path="res://scripts/UI_script/Main_Menu.gd" id="1_jfien"]
+[ext_resource type="Script" uid="uid://80y64lpds5x5" path="res://scripts/UI_script/Intro_script.gd" id="1_jfien"]
 [ext_resource type="VideoStream" uid="uid://ciahifbbfiu3l" path="res://Assets/Tavern.ogv" id="2_y2rfe"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dnolj"]

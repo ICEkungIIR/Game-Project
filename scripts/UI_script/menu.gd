@@ -12,3 +12,8 @@ func _on_btn_newgame_pressed() -> void:
 
 func _process(delta: float) -> void:
 	pass
+
+
+
+func _on_btn_exit_pressed() -> void:
+	get_tree().quit()

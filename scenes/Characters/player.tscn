@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dc6j372w4awn2" path="res://scripts/player.gd" id="1_5vs2b"]
 [ext_resource type="Texture2D" uid="uid://dx0x72a3wvoer" path="res://Assets/Cultivator_assets/animations/Fight_Stance_Idle/east/frame_000.png" id="1_vlhku"]
 [ext_resource type="Texture2D" uid="uid://dm167aevshcj3" path="res://Assets/Cultivator_assets/animations/Fight_Stance_Idle/south/frame_000.png" id="2_gmlin"]
+[ext_resource type="Script" uid="uid://b332141dauwno" path="res://scenes/Characters/camera_2d.gd" id="2_iw5iu"]
 [ext_resource type="Texture2D" uid="uid://bonsv5l7qioov" path="res://Assets/Cultivator_assets/animations/Fight_Stance_Idle/east/frame_001.png" id="2_ws0t6"]
 [ext_resource type="Texture2D" uid="uid://drttj0vgjbisp" path="res://Assets/Cultivator_assets/animations/Fight_Stance_Idle/east/frame_002.png" id="3_i6ap2"]
 [ext_resource type="Texture2D" uid="uid://dvsonk77ex8dc" path="res://Assets/Cultivator_assets/animations/Fight_Stance_Idle/east/frame_003.png" id="4_88c1f"]
@@ -487,7 +488,10 @@ shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=366018311]
 position = Vector2(416, 288)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(5, 5)
+drag_vertical_offset = -0.25
+script = ExtResource("2_iw5iu")
+max_zoom = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=832445988]
 position = Vector2(415.75003, 287.75)

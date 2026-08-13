@@ -24,6 +24,8 @@ var _home_position: Vector2
 var _wander_target: Vector2
 var _wander_timer: float = 0.0
 
+@onready var capture_prompt: Sprite2D = $CapturePrompt
+
 
 func _ready() -> void:
 	_home_position = global_position
@@ -58,11 +60,13 @@ func _pick_new_wander_target() -> void:
 func _on_capture_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_inside = true
+		capture_prompt.visible = true
 
 
 func _on_capture_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_inside = false
+		capture_prompt.visible = false
 
 
 func _unhandled_input(event: InputEvent) -> void:

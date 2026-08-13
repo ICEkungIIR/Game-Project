@@ -1,7 +1,7 @@
 extends Area2D
 class_name VendorNPC
 
-@onready var prompt_label: Label = $PromptLabel
+@onready var prompt_label: TextureRect = $PromptLabel
 
 var player_inside: bool = false
 

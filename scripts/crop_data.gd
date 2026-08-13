@@ -9,3 +9,4 @@ class_name CropData
 @export var harvest_yield: int 
 @export var stage_textures: Array[Texture2D]   # index 0 = just planted, last = ready to harvest
 @export var sell_price: int 
+@export var icon : Texture2D
