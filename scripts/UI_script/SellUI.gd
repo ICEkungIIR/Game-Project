@@ -22,6 +22,9 @@ extends Control
 @onready var coin_amount_label: Label = $CanvasLayer/Panel/Sell_container/HBoxContainer/Coin_amount
 @onready var sell_all_button: Button = $CanvasLayer/Panel/Sell_container/sell_button
 
+signal opened
+signal closed
+
 var is_open: bool = false  # source of truth for whether the shop is open —
 # use this instead of `visible`, since CanvasLayer has its own visibility
 # quirks separate from the Control tree
@@ -56,12 +59,14 @@ func open() -> void:
 	canvas_layer.visible = true
 	_refresh()
 	_update_coin_label()
+	opened.emit()
 
 
 func close() -> void:
 	print("close")
 	is_open = false
 	canvas_layer.visible = false
+	closed.emit()
 
 
 func _refresh() -> void:

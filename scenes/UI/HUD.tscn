@@ -1,13 +1,28 @@
 [gd_scene format=3 uid="uid://c40ve2ferd5cb"]
 
 [ext_resource type="PackedScene" uid="uid://cxjqmp8v1n0j2" path="res://scenes/HUD_component/coin_HUD.tscn" id="1_5ip4n"]
+[ext_resource type="PackedScene" uid="uid://30hi32yoxt8t" path="res://scenes/UI/caharacter_panel.tscn" id="1_ucsqe"]
 [ext_resource type="PackedScene" uid="uid://3invk7p4lps5" path="res://scenes/HUD_component/time_HUD.tscn" id="2_l8xe2"]
 [ext_resource type="PackedScene" uid="uid://cuuth32kb1cfr" path="res://scenes/HUD_component/day_HUD.tscn" id="3_0qpk7"]
 [ext_resource type="PackedScene" uid="uid://cgyoeqlni7dl3" path="res://scenes/HUD_component/hotbar_HUD.tscn" id="4_ucsqe"]
 [ext_resource type="Texture2D" uid="uid://ktqjx7awd2ph" path="res://Assets/HUD/inventory_04_icon.png" id="5_l8xe2"]
 [ext_resource type="PackedScene" uid="uid://fumpk4cb8etj" path="res://scenes/UI/inventory.tscn" id="6_invpanel"]
+[ext_resource type="Script" uid="uid://bndumvxep3v65" path="res://scripts/UI_script/hud.gd" id="7_hudscript"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1842482411]
+script = ExtResource("7_hudscript")
+
+[node name="CharacterPanel" parent="." unique_id=1042695497 instance=ExtResource("1_ucsqe")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 307.0
+offset_top = -450.0
+offset_right = 509.0
+offset_bottom = -450.0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=806570931]
 anchors_preset = -1
