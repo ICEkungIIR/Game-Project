@@ -1,0 +1,14 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/managers/sfx_manager.gd" id="1_sfx"]
+
+[node name="SfxManager" type="Node"]
+script = ExtResource("1_sfx")
+
+[node name="Player0" type="AudioStreamPlayer" parent="."]
+
+[node name="Player1" type="AudioStreamPlayer" parent="."]
+
+[node name="Player2" type="AudioStreamPlayer" parent="."]
+
+[node name="Player3" type="AudioStreamPlayer" parent="."]

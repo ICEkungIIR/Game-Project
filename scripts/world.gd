@@ -8,6 +8,7 @@ func _ready() -> void:
 	Craft.crafted.connect(_on_crafted)
 	Craft.craft_failed.connect(_on_craft_failed)
 	Music.play_track(Music.farm_track)
+	Farm.register_ground($Tilemap/Ground)
 
 
 func _on_crafted(recipe_id: String, amount: int) -> void:

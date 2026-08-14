@@ -11,7 +11,7 @@ signal time_changed(hour: int, minute: int)
 
 var current_day: int = 1
 var hour: int = 6
-var minute: int = 0
+var minute: float = 0.0
 
 ## In-game minutes that pass per real second. Tune to taste.
 @export var minutes_per_real_second: float = 1.0

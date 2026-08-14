@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://coar0w52ewb50"]
 
-[ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://scenes/Characters/player.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://scenes/characters/player.tscn" id="2_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://bhd86plgi4gkh" path="res://Assets/environment/exterior.png" id="3_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://vur6fx0u222a" path="res://Assets/environment/ground_grass_details.png" id="3_7r4gi"]
 [ext_resource type="Script" uid="uid://jsolc5xn3yd1" path="res://scripts/world.gd" id="3_world"]
-[ext_resource type="PackedScene" uid="uid://c220x76ldiw77" path="res://scenes/Characters/Mon_test.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://c220x76ldiw77" path="res://scenes/characters/Mon_test.tscn" id="4_k0juu"]
 [ext_resource type="Texture2D" uid="uid://bd4n7p14ytn61" path="res://Assets/environment/Plants.png" id="4_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://dw4ntnxelh4de" path="res://scenes/Characters/NPC_vender.tscn" id="5_71j4m"]
-[ext_resource type="PackedScene" uid="uid://c40ve2ferd5cb" path="res://scenes/UI/HUD.tscn" id="6_qfnet"]
-[ext_resource type="PackedScene" uid="uid://6aecshv87ojf" path="res://scenes/Objects/trees.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://dw4ntnxelh4de" path="res://scenes/characters/NPC_vender.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://c40ve2ferd5cb" path="res://scenes/hud/HUD.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://6aecshv87ojf" path="res://scenes/objects/trees.tscn" id="7_i7141"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("3_4wyf3")
@@ -3292,53 +3292,57 @@ tile_set = SubResource("TileSet_6elqx")
 [node name="player" parent="." unique_id=356656124 instance=ExtResource("2_4wyf3")]
 top_level = true
 z_index = 2
-position = Vector2(-565, -95)
 scale = Vector2(1, 1)
 
 [node name="Vender" parent="." unique_id=88416504 instance=ExtResource("5_71j4m")]
 z_index = 1
 position = Vector2(161, 127)
 
-[node name="Boar" parent="." unique_id=121886908 instance=ExtResource("4_k0juu")]
+[node name="HUD" parent="." unique_id=1842482411 instance=ExtResource("6_qfnet")]
+
+[node name="Animal" type="Node2D" parent="." unique_id=555086159]
+metadata/_edit_lock_ = true
+
+[node name="Boar" parent="Animal" unique_id=121886908 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(618, 182)
 scale = Vector2(0.2, 0.2)
 
-[node name="Boar2" parent="." unique_id=423444552 instance=ExtResource("4_k0juu")]
+[node name="Boar2" parent="Animal" unique_id=423444552 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(429, 240)
 scale = Vector2(0.2, 0.2)
 
-[node name="Boar3" parent="." unique_id=1553090750 instance=ExtResource("4_k0juu")]
+[node name="Boar3" parent="Animal" unique_id=1553090750 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(788.00006, 424.00003)
 scale = Vector2(0.2, 0.2)
 
-[node name="Boar4" parent="." unique_id=1296035085 instance=ExtResource("4_k0juu")]
+[node name="Boar4" parent="Animal" unique_id=1296035085 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(573, 395)
 scale = Vector2(0.2, 0.2)
 
-[node name="Boar5" parent="." unique_id=1349528145 instance=ExtResource("4_k0juu")]
+[node name="Boar5" parent="Animal" unique_id=1349528145 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(414, 152)
 scale = Vector2(0.2, 0.2)
 
-[node name="HUD" parent="." unique_id=1842482411 instance=ExtResource("6_qfnet")]
-script = null
+[node name="Trees" type="Node2D" parent="." unique_id=2051190601]
+metadata/_edit_lock_ = true
 
-[node name="Tree" parent="." unique_id=1327720098 instance=ExtResource("7_i7141")]
+[node name="Tree" parent="Trees" unique_id=1327720098 instance=ExtResource("7_i7141")]
 z_index = 1
 position = Vector2(602, 256)
 
-[node name="Tree2" parent="." unique_id=1924302442 instance=ExtResource("7_i7141")]
+[node name="Tree2" parent="Trees" unique_id=1924302442 instance=ExtResource("7_i7141")]
 z_index = 1
 position = Vector2(690, 344)
 
-[node name="Tree3" parent="." unique_id=59796852 instance=ExtResource("7_i7141")]
+[node name="Tree3" parent="Trees" unique_id=59796852 instance=ExtResource("7_i7141")]
 z_index = 1
 position = Vector2(765, 183)
 
-[node name="Tree4" parent="." unique_id=580907018 instance=ExtResource("7_i7141")]
+[node name="Tree4" parent="Trees" unique_id=580907018 instance=ExtResource("7_i7141")]
 z_index = 1
 position = Vector2(601, 93)

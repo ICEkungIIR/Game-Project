@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5osg8bjeh1hj"
-path="res://.godot/imported/Interaction Prompt (E).png-d3d7a76d62d33530de88971948bcdfb1.ctex"
+path="res://.godot/imported/Interaction Prompt (E).png-17a4317f94bae4f0aa007c1c2a993b5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HUD/Interaction Prompt (E).png"
-dest_files=["res://.godot/imported/Interaction Prompt (E).png-d3d7a76d62d33530de88971948bcdfb1.ctex"]
+source_file="res://Assets/hud/Interaction Prompt (E).png"
+dest_files=["res://.godot/imported/Interaction Prompt (E).png-17a4317f94bae4f0aa007c1c2a993b5b.ctex"]
 
 [params]
 

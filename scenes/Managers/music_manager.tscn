@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://k0esryonmn5f"]
 
 [ext_resource type="Script" uid="uid://ba4ahof2qjtrn" path="res://scripts/managers/music_manager.gd" id="1_music"]
-[ext_resource type="AudioStream" uid="uid://b4rikcfljd5g1" path="res://Assets/Sunlit Parcel.mp3" id="2_farm"]
+[ext_resource type="AudioStream" uid="uid://b4rikcfljd5g1" path="res://Assets/audio/bgm/Sunlit Parcel.mp3" id="2_farm"]
 
 [node name="MusicManager" type="Node" unique_id=1969511152]
 script = ExtResource("1_music")

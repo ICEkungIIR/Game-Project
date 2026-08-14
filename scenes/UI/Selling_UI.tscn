@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ciq680wjyt4dq"]
 
-[ext_resource type="Script" uid="uid://b52snv55124sk" path="res://scripts/UI_script/SellUI.gd" id="1_sellui"]
+[ext_resource type="Script" uid="uid://b52snv55124sk" path="res://scripts/ui/SellUI.gd" id="1_sellui"]
 
 [node name="Selling_UI" type="Control" unique_id=910135335]
 visible = false
