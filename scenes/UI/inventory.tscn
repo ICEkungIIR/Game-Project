@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fumpk4cb8etj"]
 
-[ext_resource type="Script" uid="uid://bnxcxj6s7amoe" path="res://scripts/UI_script/inventory.gd" id="1_krngk"]
-[ext_resource type="Texture2D" uid="uid://p1d77imagc0l" path="res://Assets/HUD/inventory Background Removed.png" id="2_kpdmy"]
+[ext_resource type="Script" uid="uid://bnxcxj6s7amoe" path="res://scripts/ui/inventory.gd" id="1_krngk"]
+[ext_resource type="Texture2D" uid="uid://p1d77imagc0l" path="res://Assets/hud/inventory Background Removed.png" id="2_kpdmy"]
 
 [node name="Inventory" type="Control" unique_id=1317154820]
 layout_mode = 3

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b56f3wjwndvci"]
 
-[ext_resource type="Script" uid="uid://80y64lpds5x5" path="res://scripts/UI_script/Intro_script.gd" id="1_hc7eg"]
-[ext_resource type="VideoStream" uid="uid://ciahifbbfiu3l" path="res://Assets/Tavern.ogv" id="2_aqbct"]
+[ext_resource type="Script" uid="uid://80y64lpds5x5" path="res://scripts/ui/Intro_script.gd" id="1_hc7eg"]
+[ext_resource type="VideoStream" uid="uid://ciahifbbfiu3l" path="res://Assets/video/Tavern.ogv" id="2_aqbct"]
 
 [node name="Intro" type="Node2D" unique_id=1133366107]
 script = ExtResource("1_hc7eg")

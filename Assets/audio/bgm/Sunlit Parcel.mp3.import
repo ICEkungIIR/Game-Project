@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4rikcfljd5g1"
+path="res://.godot/imported/Sunlit Parcel.mp3-2231e4cd5a2d722372f9bdb20603b282.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/bgm/Sunlit Parcel.mp3"
+dest_files=["res://.godot/imported/Sunlit Parcel.mp3-2231e4cd5a2d722372f9bdb20603b282.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

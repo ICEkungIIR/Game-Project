@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c220x76ldiw77"]
 
-[ext_resource type="Texture2D" uid="uid://dlmdp8onqiuw5" path="res://Assets/Boar/Boar_Idle_with_shadow.png" id="1_66rws"]
-[ext_resource type="Script" uid="uid://du4dicmfv4l7j" path="res://scripts/monster.gd" id="1_a0oq5"]
-[ext_resource type="Texture2D" uid="uid://c5osg8bjeh1hj" path="res://Assets/HUD/Interaction Prompt (E).png" id="2_prompt"]
-[ext_resource type="Texture2D" uid="uid://dm4bsvo7s4u47" path="res://Assets/Boar/Boar_Walk_with_shadow.png" id="3_6mxjq"]
+[ext_resource type="Texture2D" uid="uid://dlmdp8onqiuw5" path="res://Assets/characters/boar/Boar_Idle_with_shadow.png" id="1_66rws"]
+[ext_resource type="Script" uid="uid://du4dicmfv4l7j" path="res://scripts/characters/monster.gd" id="1_a0oq5"]
+[ext_resource type="Texture2D" uid="uid://c5osg8bjeh1hj" path="res://Assets/hud/Interaction Prompt (E).png" id="2_prompt"]
+[ext_resource type="Texture2D" uid="uid://dm4bsvo7s4u47" path="res://Assets/characters/boar/Boar_Walk_with_shadow.png" id="3_6mxjq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqe7q"]
 atlas = ExtResource("1_66rws")
