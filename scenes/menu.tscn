@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://b6tvaxw54wsq0"]
 
-[ext_resource type="Script" uid="uid://bid2mb7ub8hlg" path="res://scripts/ui/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://d1cr2nx2fpngq" path="res://Assets/menus/Background.png" id="2_v86rl"]
-[ext_resource type="Texture2D" uid="uid://belgqrur8p547" path="res://Assets/menus/Newgame.png" id="2_vjb58"]
-[ext_resource type="Texture2D" uid="uid://cby8eg5mgn7bt" path="res://Assets/menus/Logo.png" id="3_13sgg"]
-[ext_resource type="Texture2D" uid="uid://cn7uqq7udas2a" path="res://Assets/menus/continue.png" id="3_con2f"]
-[ext_resource type="Texture2D" uid="uid://d3kpx63hugv1p" path="res://Assets/menus/setting.png" id="4_4ytvr"]
-[ext_resource type="Script" uid="uid://dbeb0bk6pq66e" path="res://scripts/ui/menu_button_effect.gd" id="5_13sgg"]
-[ext_resource type="Texture2D" uid="uid://dogt5llvpryfp" path="res://Assets/menus/Exit.png" id="5_g3eks"]
+[ext_resource type="Script" uid="uid://bid2mb7ub8hlg" path="res://scripts/UI_script/menu.gd" id="1_yqeox"]
+[ext_resource type="VideoStream" uid="uid://dcka7ja7okyk4" path="res://Assets/Mainmenu/4.ogv" id="2_13sgg"]
+[ext_resource type="Texture2D" uid="uid://belgqrur8p547" path="res://Assets/Mainmenu/Newgame.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://cby8eg5mgn7bt" path="res://Assets/Mainmenu/Logo.png" id="3_13sgg"]
+[ext_resource type="Texture2D" uid="uid://cn7uqq7udas2a" path="res://Assets/Mainmenu/continue.png" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://d3kpx63hugv1p" path="res://Assets/Mainmenu/setting.png" id="4_4ytvr"]
+[ext_resource type="Script" uid="uid://dbeb0bk6pq66e" path="res://scripts/UI_script/menu_button_effect.gd" id="5_13sgg"]
+[ext_resource type="Texture2D" uid="uid://dogt5llvpryfp" path="res://Assets/Mainmenu/Exit.png" id="5_g3eks"]
 
-[node name="menu" type="Node2D" unique_id=827773846]
+[node name="Node2D" type="Node2D" unique_id=827773846]
 script = ExtResource("1_yqeox")
 
-[node name="background" type="TextureRect" parent="." unique_id=2111832323]
+[node name="background" type="VideoStreamPlayer" parent="." unique_id=1323669946]
+custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,7 +23,10 @@ offset_right = 1920.0
 offset_bottom = 1086.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_v86rl")
+stream = ExtResource("2_13sgg")
+autoplay = true
+expand = true
+loop = true
 
 [node name="Logo" type="TextureRect" parent="." unique_id=2117215777]
 custom_minimum_size = Vector2(500, 300)

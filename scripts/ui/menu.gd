@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
-	# เชื่อมสัญญาณ pressed ของปุ่มด้วยโค้ด (เผื่อยังไม่ได้เชื่อมผ่าน Inspector)
+	# เชื่อมสัญญาณ pressed ของปุ่ม New Game
 	$UI/btnNewgame.pressed.connect(_on_btn_newgame_pressed)
 
 
