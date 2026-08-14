@@ -3299,46 +3299,52 @@ scale = Vector2(1, 1)
 z_index = 1
 position = Vector2(161, 127)
 
-[node name="Boar" parent="." unique_id=121886908 instance=ExtResource("4_k0juu")]
+[node name="HUD" parent="." unique_id=1842482411 instance=ExtResource("6_qfnet")]
+visible = false
+
+[node name="Animal" type="Node2D" parent="." unique_id=555086159]
+metadata/_edit_lock_ = true
+
+[node name="Boar" parent="Animal" unique_id=121886908 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(618, 182)
 scale = Vector2(0.2, 0.2)
 
-[node name="Boar2" parent="." unique_id=423444552 instance=ExtResource("4_k0juu")]
+[node name="Boar2" parent="Animal" unique_id=423444552 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(429, 240)
 scale = Vector2(0.2, 0.2)
 
-[node name="Boar3" parent="." unique_id=1553090750 instance=ExtResource("4_k0juu")]
+[node name="Boar3" parent="Animal" unique_id=1553090750 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(788.00006, 424.00003)
 scale = Vector2(0.2, 0.2)
 
-[node name="Boar4" parent="." unique_id=1296035085 instance=ExtResource("4_k0juu")]
+[node name="Boar4" parent="Animal" unique_id=1296035085 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(573, 395)
 scale = Vector2(0.2, 0.2)
 
-[node name="Boar5" parent="." unique_id=1349528145 instance=ExtResource("4_k0juu")]
+[node name="Boar5" parent="Animal" unique_id=1349528145 instance=ExtResource("4_k0juu")]
 z_index = 1
 position = Vector2(414, 152)
 scale = Vector2(0.2, 0.2)
 
-[node name="HUD" parent="." unique_id=1842482411 instance=ExtResource("6_qfnet")]
-script = null
+[node name="Trees" type="Node2D" parent="." unique_id=2051190601]
+metadata/_edit_lock_ = true
 
-[node name="Tree" parent="." unique_id=1327720098 instance=ExtResource("7_i7141")]
+[node name="Tree" parent="Trees" unique_id=1327720098 instance=ExtResource("7_i7141")]
 z_index = 1
 position = Vector2(602, 256)
 
-[node name="Tree2" parent="." unique_id=1924302442 instance=ExtResource("7_i7141")]
+[node name="Tree2" parent="Trees" unique_id=1924302442 instance=ExtResource("7_i7141")]
 z_index = 1
 position = Vector2(690, 344)
 
-[node name="Tree3" parent="." unique_id=59796852 instance=ExtResource("7_i7141")]
+[node name="Tree3" parent="Trees" unique_id=59796852 instance=ExtResource("7_i7141")]
 z_index = 1
 position = Vector2(765, 183)
 
-[node name="Tree4" parent="." unique_id=580907018 instance=ExtResource("7_i7141")]
+[node name="Tree4" parent="Trees" unique_id=580907018 instance=ExtResource("7_i7141")]
 z_index = 1
 position = Vector2(601, 93)
