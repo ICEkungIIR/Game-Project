@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bib8oej3flh27"]
+
+[ext_resource type="Script" uid="uid://cusertu4hk4d5" path="res://scripts/managers/ingredient_entry.gd" id="1_r2mna"]
+[ext_resource type="Script" uid="uid://boaen1ci0mbxr" path="res://scripts/farm/recipe_data.gd" id="2_ixypm"]
+
+[resource]
+script = ExtResource("2_ixypm")
+recipe_id = "milk"
+metadata/_custom_type_script = "uid://boaen1ci0mbxr"

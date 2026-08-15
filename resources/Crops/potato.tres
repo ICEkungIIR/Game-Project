@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://c233t8o0sebm4"]
 
-[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/crop_data.gd" id="1_5nqck"]
-[ext_resource type="Texture2D" uid="uid://drw7pt2e5310p" path="res://Assets/environment/potato.png" id="2_potato"]
+[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/farm/crop_data.gd" id="1_5nqck"]
+[ext_resource type="Texture2D" uid="uid://vjad2scfk8jc" path="res://Assets/resources/Crops/crop_seed.png" id="1_bf7pt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq5kr"]
+atlas = ExtResource("1_bf7pt")
+region = Rect2(154, 11, 91, 96)
 
 [resource]
 script = ExtResource("1_5nqck")
@@ -9,4 +13,5 @@ crop_id = "potato"
 days_to_grow = 5
 harvest_yield = 3
 sell_price = 15
-icon = ExtResource("2_potato")
+icon = SubResource("AtlasTexture_wq5kr")
+display_scale = 0.18

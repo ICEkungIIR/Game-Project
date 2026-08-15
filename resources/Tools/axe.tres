@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Tools" format=3 uid="uid://d28wmajekosak"]
+
+[ext_resource type="Texture2D" uid="uid://dq328546xkf24" path="res://Assets/resources/Tools/tools.png" id="1_cuv56"]
+[ext_resource type="Script" uid="uid://cusertu4hk4d5" path="res://scripts/managers/ingredient_entry.gd" id="1_l5de8"]
+[ext_resource type="Script" uid="uid://dxc1dr7g07fke" path="res://scripts/farm/tools_data.gd" id="2_cuv56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1r4r"]
+atlas = ExtResource("1_cuv56")
+region = Rect2(572, 92, 309, 658)
+
+[resource]
+script = ExtResource("2_cuv56")
+tools_id = "axe"
+efficiency = 1
+damage = 4
+sell_price = 10
+icon = SubResource("AtlasTexture_r1r4r")
+metadata/_custom_type_script = "uid://dxc1dr7g07fke"

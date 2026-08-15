@@ -1,12 +1,26 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://c6yuhdxk858dn"]
 
-[ext_resource type="Texture2D" uid="uid://bc6xq7l063yml" path="res://Assets/environment/wheat.png" id="1_n5yeo"]
-[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/crop_data.gd" id="1_wheat"]
+[ext_resource type="Texture2D" uid="uid://bc6xq7l063yml" path="res://Assets/resources/Crops/wheat.png" id="1_n5yeo"]
+[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/farm/crop_data.gd" id="1_wheat"]
+[ext_resource type="Texture2D" uid="uid://bd4n7p14ytn61" path="res://Assets/environment/Plants.png" id="3_a43ff"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7kh3"]
+atlas = ExtResource("3_a43ff")
+region = Rect2(9, 371, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r4gi"]
+atlas = ExtResource("3_a43ff")
+region = Rect2(39, 363, 14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3hyu"]
+atlas = ExtResource("3_a43ff")
+region = Rect2(68, 353, 22, 28)
 
 [resource]
 script = ExtResource("1_wheat")
 crop_id = "wheat"
 days_to_grow = 3
 harvest_yield = 2
+stage_textures = Array[Texture2D]([SubResource("AtlasTexture_w7kh3"), SubResource("AtlasTexture_7r4gi"), SubResource("AtlasTexture_e3hyu")])
 sell_price = 5
 icon = ExtResource("1_n5yeo")

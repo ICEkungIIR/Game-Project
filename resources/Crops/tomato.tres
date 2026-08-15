@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://bb08e2d1pacav"]
 
-[ext_resource type="Texture2D" uid="uid://bc6xq7l063yml" path="res://Assets/environment/wheat.png" id="1_hl10j"]
-[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/crop_data.gd" id="1_ty0hd"]
+[ext_resource type="Texture2D" uid="uid://vjad2scfk8jc" path="res://Assets/resources/Crops/crop_seed.png" id="1_hl10j"]
+[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/farm/crop_data.gd" id="1_ty0hd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfjyo"]
+atlas = ExtResource("1_hl10j")
+region = Rect2(76, 11, 91, 96)
 
 [resource]
 script = ExtResource("1_ty0hd")
@@ -9,5 +13,5 @@ crop_id = "tomato"
 days_to_grow = 4
 harvest_yield = 3
 sell_price = 10
-icon = ExtResource("1_hl10j")
+icon = SubResource("AtlasTexture_rfjyo")
 metadata/_custom_type_script = "uid://coq65bp31wu6p"

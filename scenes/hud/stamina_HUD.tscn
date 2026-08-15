@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://br8vjpgl1t13e"]
+
+[ext_resource type="Script" uid="uid://dsvcnafosxn3" path="res://scripts/ui/stamina_hud.gd" id="1_stamina"]
+
+[node name="Control" type="Control" unique_id=1160807511]
+custom_minimum_size = Vector2(225, 15)
+layout_mode = 3
+anchor_right = 0.234375
+anchor_bottom = 0.027777778
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_stamina")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2115382028]
+modulate = Color(0.2, 0.75, 0.2, 1)
+custom_minimum_size = Vector2(225, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -15.0
+offset_right = 225.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0

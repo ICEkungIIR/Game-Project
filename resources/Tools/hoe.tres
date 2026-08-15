@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Tools" format=3 uid="uid://dy2x3q6qsfp3b"]
+
+[ext_resource type="Texture2D" uid="uid://c21vsgv5uyk3f" path="res://Assets/resources/Tools/stone_hoe.png" id="1_q01a1"]
+[ext_resource type="Script" uid="uid://cusertu4hk4d5" path="res://scripts/managers/ingredient_entry.gd" id="1_wbgek"]
+[ext_resource type="Script" uid="uid://dxc1dr7g07fke" path="res://scripts/farm/tools_data.gd" id="2_q01a1"]
+
+[resource]
+script = ExtResource("2_q01a1")
+tools_id = "hoe"
+efficiency = 1
+damage = 2
+sell_price = 10
+icon = ExtResource("1_q01a1")
+metadata/_custom_type_script = "uid://dxc1dr7g07fke"
