@@ -2,11 +2,26 @@ extends Node
 
 ## Autoload singleton: CropDatabase
 ## Add as Autoload named "CropDB" in Project Settings.
-## Scans resources/Crops/ on startup and builds a crop_id -> CropData map,
-## so any system (SellUI, shops, etc.) can look up price/name/texture
-## from just the item_id string that Inventory stores.
+## Builds a crop_id -> CropData map from an explicit preload() list, so
+## any system (SellUI, shops, etc.) can look up price/name/texture from
+## just the item_id string that Inventory stores.
+##
+## Was previously a runtime DirAccess scan of resources/Crops/ — switched
+## to explicit preload() because runtime directory-listing of res:// is a
+## fragile pattern across exported builds/platforms (confirmed: worked
+## fine in the Godot editor, but this class of bug is exactly why crop/
+## tool icons silently failed to show in the exported web build).
+## preload() creates a static dependency the exporter always bundles, and
+## behaves identically in editor, desktop, and web exports.
+##
+## Add a new crop: add its .tres path to CROP_RESOURCES below.
 
-const CROPS_PATH := "res://resources/Crops/"
+const CROP_RESOURCES: Array[CropData] = [
+	preload("res://resources/Crops/wheat.tres"),
+	preload("res://resources/Crops/carrot.tres"),
+	preload("res://resources/Crops/potato.tres"),
+	preload("res://resources/Crops/tomato.tres"),
+]
 
 var by_id: Dictionary = {}  # crop_id (String) -> CropData
 
@@ -16,21 +31,11 @@ func _ready() -> void:
 
 
 func _load_all_crops() -> void:
-	var dir := DirAccess.open(CROPS_PATH)
-	if dir == null:
-		push_error("CropDatabase: could not open %s" % CROPS_PATH)
-		return
-	dir.list_dir_begin()
-	var file_name := dir.get_next()
-	while file_name != "":
-		if file_name.ends_with(".tres"):
-			var data: CropData = load(CROPS_PATH + file_name)
-			if data and data.crop_id != "":
-				by_id[data.crop_id] = data
-			else:
-				push_warning("CropDatabase: %s has no crop_id set — fill it in the Inspector" % file_name)
-		file_name = dir.get_next()
-	dir.list_dir_end()
+	for data in CROP_RESOURCES:
+		if data and data.crop_id != "":
+			by_id[data.crop_id] = data
+		else:
+			push_warning("CropDatabase: a crop resource has no crop_id set — fill it in the Inspector")
 
 
 func get_crop(crop_id: String) -> CropData:
