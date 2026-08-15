@@ -348,7 +348,6 @@ animation = &"idle_left"
 frame_progress = 0.9488687
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Monster" unique_id=1564696133]
-visible = false
 position = Vector2(4.5, 2.75)
 shape = SubResource("RectangleShape2D_dnolj")
 
@@ -356,9 +355,9 @@ shape = SubResource("RectangleShape2D_dnolj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monster/CaptureArea" unique_id=928360074]
 physics_interpolation_mode = 2
-visible = false
 position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_a0oq5")
+one_way_collision_margin = 0.0
 
 [node name="CapturePrompt" type="Sprite2D" parent="Monster" unique_id=1893004411]
 visible = false

@@ -39,6 +39,14 @@ window/stretch/aspect="expand"
 
 project/assembly_name="New Game Project"
 
+[editor]
+
+movie_writer/ogv/audio_quality=0.0
+movie_writer/ogv/encoding_speed=2
+movie_writer/movie_file="/Users/saran/Movies/godot/ToTW.ogv"
+movie_writer/disable_vsync=true
+movie_writer/fps=30
+
 [file_customization]
 
 folder_colors={

@@ -3293,6 +3293,7 @@ tile_set = SubResource("TileSet_6elqx")
 top_level = true
 z_index = 2
 scale = Vector2(1, 1)
+speed = 130.0
 
 [node name="Vender" parent="." unique_id=88416504 instance=ExtResource("5_71j4m")]
 z_index = 1
