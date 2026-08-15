@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://b332141dauwno" path="res://scripts/characters/camera_2d.gd" id="2_iw5iu"]
 [ext_resource type="Texture2D" uid="uid://2a0aw3b5m05q" path="res://Assets/characters/player/Player.png" id="3_7xbc7"]
 [ext_resource type="Texture2D" uid="uid://dedqtxav48p6q" path="res://Assets/characters/player/Player_Actions.png" id="4_ipnkg"]
-[ext_resource type="AudioStream" path="res://Assets/audio/sfx/dig_tiling.mp3" id="5_dig_tiling"]
-[ext_resource type="Script" path="res://scripts/farm/tile_highlight.gd" id="6_tile_highlight"]
+[ext_resource type="AudioStream" uid="uid://bbgc215n4qc8n" path="res://Assets/audio/sfx/dig_tiling.mp3" id="5_dig_tiling"]
+[ext_resource type="Script" uid="uid://bsikb5o0xv0um" path="res://scripts/farm/tile_highlight.gd" id="6_tile_highlight"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(16, 32)
@@ -660,16 +660,16 @@ scale = Vector2(2.5, 2.5)
 platform_floor_layers = 4294901761
 safe_margin = 7.684
 script = ExtResource("1_5vs2b")
-speed = 180.0
+speed = 130.0
 tiling_sfx = ExtResource("5_dig_tiling")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671152387]
 shape = SubResource("RectangleShape2D_dovo2")
 
-[node name="TileHighlight" type="Node2D" parent="."]
-top_level = true
+[node name="TileHighlight" type="Node2D" parent="." unique_id=1504968925]
 visible = false
+top_level = true
 script = ExtResource("6_tile_highlight")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=366018311]
@@ -680,5 +680,5 @@ max_zoom = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=904664305]
 sprite_frames = SubResource("SpriteFrames_6elqx")
-animation = &"tiling_side"
-frame_progress = 0.1677922
+animation = &"idle_front"
+frame_progress = 0.6926209
