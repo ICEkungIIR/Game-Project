@@ -9,7 +9,7 @@ func _ready() -> void:
 	await get_tree().create_timer(intro_length).timeout
 	_on_intro_finished()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:

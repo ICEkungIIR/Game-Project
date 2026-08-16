@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="CropData" format=3 uid="uid://bxnim25r2cxrv"]
 
-[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/crop_data.gd" id="1_8aoup"]
-[ext_resource type="Texture2D" uid="uid://bc6xq7l063yml" path="res://Assets/environment/wheat.png" id="1_wq5kr"]
+[ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/farm/crop_data.gd" id="1_8aoup"]
+[ext_resource type="Texture2D" uid="uid://vjad2scfk8jc" path="res://Assets/resources/Crops/crop_seed.png" id="1_wq5kr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ktgj"]
+atlas = ExtResource("1_wq5kr")
+region = Rect2(0, 0, 89, 107)
 
 [resource]
 script = ExtResource("1_8aoup")
@@ -9,5 +13,5 @@ crop_id = "carrot"
 days_to_grow = 3
 harvest_yield = 2
 sell_price = 7
-icon = ExtResource("1_wq5kr")
+icon = SubResource("AtlasTexture_1ktgj")
 metadata/_custom_type_script = "uid://coq65bp31wu6p"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Tools" format=3 uid="uid://ma7era05ddbp"]
+
+[ext_resource type="Texture2D" uid="uid://gv8thudv238w" path="res://Assets/resources/Tools/watering_can.png" id="1_e4gh4"]
+[ext_resource type="Script" uid="uid://cusertu4hk4d5" path="res://scripts/managers/ingredient_entry.gd" id="1_vol3y"]
+[ext_resource type="Script" uid="uid://dxc1dr7g07fke" path="res://scripts/farm/tools_data.gd" id="2_e4gh4"]
+
+[resource]
+script = ExtResource("2_e4gh4")
+tools_id = "watering_can"
+efficiency = 1
+sell_price = 10
+icon = ExtResource("1_e4gh4")
+metadata/_custom_type_script = "uid://dxc1dr7g07fke"

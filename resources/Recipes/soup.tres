@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bd4n7p14ytn61" path="res://Assets/environment/Plants.png" id="1_6mwcx"]
 [ext_resource type="Script" uid="uid://cusertu4hk4d5" path="res://scripts/managers/ingredient_entry.gd" id="1_ltbg6"]
-[ext_resource type="Script" uid="uid://boaen1ci0mbxr" path="res://scripts/managers/recipe.gd" id="1_r43gh"]
+[ext_resource type="Script" uid="uid://boaen1ci0mbxr" path="res://scripts/farm/recipe_data.gd" id="3_6mwcx"]
 
 [sub_resource type="Resource" id="Resource_sqlx5"]
 script = ExtResource("1_ltbg6")
@@ -13,7 +13,7 @@ script = ExtResource("1_ltbg6")
 item_id = "milk"
 
 [resource]
-script = ExtResource("1_r43gh")
+script = ExtResource("3_6mwcx")
 recipe_id = "soup"
 ingredients = Array[ExtResource("1_ltbg6")]([SubResource("Resource_sqlx5"), SubResource("Resource_gd7pt")])
 sell_price = 30

@@ -63,7 +63,8 @@ func update_item(item_id: String) -> void:
 	elif crop_data and not crop_data.stage_textures.is_empty():
 		icon.texture = crop_data.stage_textures[-1]
 	else:
-		icon.texture = null
+		var tool_data: Tools = ToolDB.get_tool(item_id)
+		icon.texture = tool_data.icon if tool_data else null
 
 	var amount: int = Inventory.get_amount(item_id)
 	count_label.text = str(amount) if amount > 1 else ""

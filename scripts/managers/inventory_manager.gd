@@ -17,10 +17,10 @@ var items: Dictionary = {}
 const HOTBAR_SIZE: int = 10
 var hotbar_slots: Array[String] = ["", "", "", "", "", "", "", "", "", ""]
 var selected_hotbar_index: int = 0
-
+var stacks = 64
 # Optional: max stack size per item, defaults to 99 if not listed
 var max_stack: Dictionary = {
-	"carrot": 99,
+	"carrot": stacks,
 	"tomato": 99,
 	"potato": 99,
 	"pumpkin": 99,

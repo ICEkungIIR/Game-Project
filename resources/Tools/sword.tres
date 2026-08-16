@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Tools" format=3 uid="uid://c11hjiydn1m77"]
+
+[ext_resource type="Script" uid="uid://cusertu4hk4d5" path="res://scripts/managers/ingredient_entry.gd" id="1_fa8b8"]
+[ext_resource type="Texture2D" uid="uid://dq328546xkf24" path="res://Assets/resources/Tools/tools.png" id="1_gnlwt"]
+[ext_resource type="Script" uid="uid://dxc1dr7g07fke" path="res://scripts/farm/tools_data.gd" id="2_gnlwt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rdvt"]
+atlas = ExtResource("1_gnlwt")
+region = Rect2(1026, 92, 238, 658)
+
+[resource]
+script = ExtResource("2_gnlwt")
+tools_id = "sword"
+efficiency = 1
+damage = 5
+sell_price = 10
+icon = SubResource("AtlasTexture_3rdvt")
+metadata/_custom_type_script = "uid://dxc1dr7g07fke"
