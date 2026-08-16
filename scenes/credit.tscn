@@ -1,0 +1,356 @@
+[gd_scene format=3 uid="uid://d0fobds3ckiec"]
+
+[ext_resource type="Script" uid="uid://dv8ud0t6qa806" path="res://scripts/credit_scene.gd" id="1_5egdn"]
+[ext_resource type="VideoStream" uid="uid://bk8dnoi3geu3v" path="res://Assets/video/Animate_pixel_art_looping_video_202608151817.ogv" id="1_kmqx5"]
+[ext_resource type="Texture2D" uid="uid://c431p6r3nnas0" path="res://Assets/menus/Back_button.png" id="3_mkchp"]
+[ext_resource type="FontFile" uid="uid://b5fakr0tqhml5" path="res://docs/ByteBounce.ttf" id="3_st0h4"]
+[ext_resource type="Texture2D" uid="uid://cwqj754huyrjx" path="res://Assets/menus/pressed.png" id="4_0xonq"]
+[ext_resource type="FontFile" uid="uid://gp5br0m4f40o" path="res://scenes/ByteBounce.ttf" id="4_32mfc"]
+[ext_resource type="Texture2D" uid="uid://xjhxw76s2s6a" path="res://Assets/menus/ChatGPT Image 15 ส.ค. 2569 20_23_30.png" id="4_y6cwi"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fireflies"]
+emission_shape = 3
+emission_box_extents = Vector3(600, 250, 1)
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+gravity = Vector3(0, -15, 0)
+scale_min = 0.5
+color = Color(0.9, 0.85, 0.4, 1)
+
+[sub_resource type="Animation" id="Animation_credit_intro"]
+resource_name = "credit_intro"
+length = 22.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HeaderBar/Logo:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeaderBar/CourseTitle:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HeaderBar/CourseSubtitle:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HeaderBar/InstructorLine:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HeaderBar/TeamHeader:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HeaderBar/TeamList/Member1:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.6, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HeaderBar/TeamList/Member2:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.8, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HeaderBar/TeamList/Member3:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2D:zoom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05)]
+}
+
+[sub_resource type="Animation" id="Animation_flicker"]
+resource_name = "flicker"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AmberLight:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.9, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.7, 1.2, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
+_data = {
+&"credit_intro": SubResource("Animation_credit_intro"),
+&"flicker": SubResource("Animation_flicker")
+}
+
+[node name="CreditScene" type="Control" unique_id=34726656]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5egdn")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=82121460]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_kmqx5")
+autoplay = true
+expand = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=87438216]
+layer = 200
+scale = Vector2(1000, 1000)
+transform = Transform2D(1000, 0, 0, 1000, 0, 0)
+scroll_base_scale = Vector2(1000, 1000)
+
+[node name="LayerSky" type="ParallaxLayer" parent="ParallaxBackground" unique_id=573450117]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="SkySprite" type="Sprite2D" parent="ParallaxBackground/LayerSky" unique_id=346255626]
+
+[node name="LayerRuins" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1518375626]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="RuinsSprite" type="Sprite2D" parent="ParallaxBackground/LayerRuins" unique_id=543343386]
+position = Vector2(576, 400)
+
+[node name="LayerGrass" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2124524778]
+
+[node name="GrassSprite" type="Sprite2D" parent="ParallaxBackground/LayerGrass" unique_id=743459074]
+position = Vector2(576, 600)
+
+[node name="AmberLight" type="PointLight2D" parent="." unique_id=718048038]
+position = Vector2(576, 350)
+color = Color(1, 0.7, 0.35, 1)
+texture_scale = 6.0
+
+[node name="LightFireflies" type="GPUParticles2D" parent="." unique_id=2075707227]
+position = Vector2(964, 542)
+amount = 20
+lifetime = 39.4
+process_material = SubResource("ParticleProcessMaterial_fireflies")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=353474185]
+position = Vector2(962, 542)
+
+[node name="HeaderBar" type="ColorRect" parent="." unique_id=267246350]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 239.0
+offset_bottom = 429.0
+grow_horizontal = 2
+color = Color(0.14901961, 0.14901961, 0.16078432, 0)
+
+[node name="BackButton" type="TextureButton" parent="HeaderBar" unique_id=1598675814]
+texture_filter = 1
+layout_mode = 0
+offset_left = 103.0
+offset_top = 18.0
+offset_right = 292.0
+offset_bottom = 138.0
+texture_normal = ExtResource("3_mkchp")
+texture_pressed = ExtResource("4_0xonq")
+texture_hover = ExtResource("4_y6cwi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Logo" type="TextureRect" parent="HeaderBar" unique_id=669809502]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 50.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CourseTitle" type="Label" parent="HeaderBar" unique_id=314111717]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 58.0
+offset_right = 300.0
+offset_bottom = 84.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_st0h4")
+theme_override_font_sizes/font_size = 50
+text = "Computer Game Development  Course 2026"
+horizontal_alignment = 1
+
+[node name="CourseSubtitle" type="Label" parent="HeaderBar" unique_id=1812136065]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 86.0
+offset_right = 300.0
+offset_bottom = 106.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_st0h4")
+theme_override_font_sizes/font_size = 50
+text = "At College of Computing, Khon Kaen University"
+horizontal_alignment = 1
+
+[node name="InstructorLine" type="Label" parent="HeaderBar" unique_id=1676134836]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 127.0
+offset_right = 300.0
+offset_bottom = 155.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_32mfc")
+theme_override_font_sizes/font_size = 40
+text = "By  Asst.Dr. Wachirawut Thamviset"
+horizontal_alignment = 1
+
+[node name="TeamHeader" type="Label" parent="HeaderBar" unique_id=159152821]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 159.0
+offset_right = 150.0
+offset_bottom = 185.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.95, 0.4, 0.5, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_32mfc")
+theme_override_font_sizes/font_size = 35
+text = "Development Team"
+horizontal_alignment = 1
+
+[node name="TeamList" type="VBoxContainer" parent="HeaderBar" unique_id=1002191094]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 184.0
+offset_right = 260.0
+offset_bottom = 276.0
+grow_horizontal = 2
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="Member1" type="Label" parent="HeaderBar/TeamList" unique_id=719579269]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_32mfc")
+theme_override_font_sizes/font_size = 30
+text = "1.THUN SAWANGSRI 673380078-7"
+horizontal_alignment = 1
+
+[node name="Member2" type="Label" parent="HeaderBar/TeamList" unique_id=1535025008]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_32mfc")
+theme_override_font_sizes/font_size = 30
+text = "2.SARANYU CHAROENPOL 673380532-1"
+horizontal_alignment = 1
+
+[node name="Member3" type="Label" parent="HeaderBar/TeamList" unique_id=1132262321]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_32mfc")
+theme_override_font_sizes/font_size = 30
+text = "3.TEECHANON ASAWPHUM 67338075-3"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1664557157]
+libraries/ = SubResource("AnimationLibrary_main")

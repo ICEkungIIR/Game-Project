@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	video.play()
 
-	var intro_length: float = 2.2
+	var intro_length: float = 2.30
 	await get_tree().create_timer(intro_length).timeout
 	_on_intro_finished()
 
