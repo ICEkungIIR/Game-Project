@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cwqj754huyrjx" path="res://Assets/menus/pressed.png" id="4_0xonq"]
 [ext_resource type="FontFile" uid="uid://gp5br0m4f40o" path="res://scenes/ByteBounce.ttf" id="4_32mfc"]
 [ext_resource type="Texture2D" uid="uid://xjhxw76s2s6a" path="res://Assets/menus/ChatGPT Image 15 ส.ค. 2569 20_23_30.png" id="4_y6cwi"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://ygtdesf8xwxc" path="res://Assets/audio/bgm/credits.mp3" id="8_pm75b"]
+=======
+>>>>>>> origin/main
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fireflies"]
 emission_shape = 3
@@ -172,7 +175,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("1_kmqx5")
+<<<<<<< HEAD
 volume_db = -80.0
+=======
+>>>>>>> origin/main
 autoplay = true
 expand = true
 
@@ -256,7 +262,10 @@ offset_left = -300.0
 offset_top = 58.0
 offset_right = 300.0
 offset_bottom = 84.0
+<<<<<<< HEAD
 grow_horizontal = 2
+=======
+>>>>>>> origin/main
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_st0h4")
 theme_override_font_sizes/font_size = 50
@@ -357,9 +366,12 @@ horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1664557157]
 libraries/ = SubResource("AnimationLibrary_main")
+<<<<<<< HEAD
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1098525492]
 stream = ExtResource("8_pm75b")
 volume_db = 10.0
 autoplay = true
 parameters/looping = false
+=======
+>>>>>>> origin/main
