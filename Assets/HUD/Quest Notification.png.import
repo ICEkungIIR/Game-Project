@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6usg5xesv21s"
-path="res://.godot/imported/Quest Notification.png-3625d1d2ec36964f0aa99666e2a1f226.ctex"
+path="res://.godot/imported/Quest Notification.png-3ca2ab3c36385412baaec41341271994.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/hud/Quest Notification.png"
-dest_files=["res://.godot/imported/Quest Notification.png-3625d1d2ec36964f0aa99666e2a1f226.ctex"]
+source_file="res://Assets/HUD/Quest Notification.png"
+dest_files=["res://.godot/imported/Quest Notification.png-3ca2ab3c36385412baaec41341271994.ctex"]
 
 [params]
 
