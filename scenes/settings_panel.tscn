@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cky6uv8o0iiei"]
+
+[ext_resource type="Script" uid="uid://c5047fnb0vwil" path="res://scripts/settings_panel.gd" id="1_54ti7"]
+[ext_resource type="FontFile" uid="uid://gp5br0m4f40o" path="res://scenes/ByteBounce.ttf" id="1_qtqyt"]
+[ext_resource type="FontFile" uid="uid://b5fakr0tqhml5" path="res://docs/ByteBounce.ttf" id="2_tl2iu"]
+
+[node name="SettingsPanel" type="Control" unique_id=609008265]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54ti7")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=1050574430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="Panel" type="Panel" parent="." unique_id=1557882716]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.125
+offset_top = -348.5
+offset_right = 324.125
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel" unique_id=863027878]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_top = 52.0
+offset_right = 108.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_qtqyt")
+theme_override_font_sizes/font_size = 72
+text = "Settings"
+
+[node name="SettingsGrid" type="GridContainer" parent="Panel" unique_id=2010555055]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.5
+offset_top = -119.5
+offset_right = 232.5
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 19
+columns = 2
+
+[node name="Master Volume" type="Label" parent="Panel/SettingsGrid" unique_id=2031046209]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_qtqyt")
+theme_override_font_sizes/font_size = 56
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="Panel/SettingsGrid" unique_id=322416178]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.05
+
+[node name="Music Volume" type="Label" parent="Panel/SettingsGrid" unique_id=320415400]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_tl2iu")
+theme_override_font_sizes/font_size = 56
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="Panel/SettingsGrid" unique_id=403647024]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.05
+
+[node name="SFX Volume" type="Label" parent="Panel/SettingsGrid" unique_id=874374133]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_tl2iu")
+theme_override_font_sizes/font_size = 56
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="Panel/SettingsGrid" unique_id=563465415]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.05
+
+[node name="Fullscreen" type="Label" parent="Panel/SettingsGrid" unique_id=1473530011]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_tl2iu")
+theme_override_font_sizes/font_size = 56
+text = "Fullscreen"
+
+[node name="FullscreenCheck" type="CheckButton" parent="Panel/SettingsGrid" unique_id=841938075]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/h_separation = 4
+vertical_icon_alignment = 2
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=455344439]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 144.5
+offset_right = 60.0
+offset_bottom = 191.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tl2iu")
+theme_override_font_sizes/font_size = 56
+text = "Close"
