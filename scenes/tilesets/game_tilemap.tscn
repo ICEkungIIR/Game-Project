@@ -22,5 +22,8 @@ tile_set = ExtResource("1_mxogd")
 [node name="nature" type="TileMapLayer" parent="GameTileMap" unique_id=599238279]
 tile_set = ExtResource("1_mxogd")
 
+[node name="watered_dirt" type="TileMapLayer" parent="GameTileMap"]
+tile_set = ExtResource("1_mxogd")
+
 [node name="player" parent="." unique_id=356656124 instance=ExtResource("2_glepq")]
 position = Vector2(121, 286)
