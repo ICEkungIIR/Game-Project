@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c856pq5no6fr5"]
+
+[ext_resource type="VideoStream" uid="uid://b31iq4h2egjrd" path="res://Assets/video/Ending.ogv" id="1_d2bch"]
+[ext_resource type="Script" uid="uid://dt8r8gn87g8j" path="res://scripts/ui/lose_ending.gd" id="1_x3wlu"]
+[ext_resource type="Texture2D" uid="uid://c431p6r3nnas0" path="res://Assets/menus/Back_button.png" id="2_hfkth"]
+[ext_resource type="Texture2D" uid="uid://cwqj754huyrjx" path="res://Assets/menus/pressed.png" id="3_x3wlu"]
+[ext_resource type="Texture2D" uid="uid://xjhxw76s2s6a" path="res://Assets/menus/ChatGPT Image 15 ส.ค. 2569 20_23_30.png" id="4_k1rri"]
+
+[node name="Node2D" type="Control" unique_id=2026646208]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x3wlu")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1631260816]
+custom_minimum_size = Vector2(1920, 1080)
+propagate_maximum_size = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stream = ExtResource("1_d2bch")
+volume_db = -53.029995
+autoplay = true
+expand = true
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1599542616]
+texture_filter = 1
+layout_mode = 0
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 218.0
+offset_bottom = 149.0
+texture_normal = ExtResource("2_hfkth")
+texture_pressed = ExtResource("3_x3wlu")
+texture_hover = ExtResource("4_k1rri")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

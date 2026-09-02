@@ -24,6 +24,12 @@ func _load_all_recipes() -> void:
 		file_name = dir.get_next()
 	dir.list_dir_end()
 
+func get_recipe(recipe_id: String) -> Recipe:
+	for r in recipes:
+		if r.recipe_id == recipe_id:
+			return r
+	return null
+
 func get_recipes_by_category(category: String) -> Array[Recipe]:
 	return recipes.filter(func(r): return r.category == category)
 

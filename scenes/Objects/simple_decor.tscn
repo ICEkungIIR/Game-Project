@@ -1,0 +1,25 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Assets/environment/decor/decoration.png" id="1_decor"]
+[ext_resource type="Script" path="res://scripts/objects/simple_decor.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_decor"]
+size = Vector2(10, 4)
+
+[node name="SimpleDecor" type="StaticBody2D"]
+z_index = -1
+collision_mask = 0
+script = ExtResource("1_script")
+size = 1
+style = 1
+random = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_decor")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_decor")
+disabled = true

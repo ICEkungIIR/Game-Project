@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tavern of Twilight"
-run/main_scene="uid://b56f3wjwndvci"
+run/main_scene="uid://coar0w52ewb50"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
@@ -32,6 +32,7 @@ Stats="*res://scripts/managers/stats_manager.gd"
 Quota="*res://scripts/managers/quota_manager.gd"
 RecipeDB="*uid://bpc8llrlk6kf7"
 Transition="*uid://dagful7h8paod"
+Fx="*res://scripts/managers/fx_manager.gd"
 
 [display]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ciq680wjyt4dq"]
 
 [ext_resource type="Script" uid="uid://b52snv55124sk" path="res://scripts/ui/SellUI.gd" id="1_sellui"]
-[ext_resource type="Texture2D" uid="uid://4enaecs466mf" path="res://Assets/HUD/coin_icon.png" id="2_68svs"]
+[ext_resource type="Texture2D" uid="uid://4enaecs466mf" path="res://Assets/hud/coin_icon.png" id="2_68svs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33w08"]
 bg_color = Color(0.2601587, 0.2601587, 0.2601587, 1)
@@ -29,10 +29,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_33w08")
 
 [node name="item_list_container" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=23814195]
 layout_mode = 0
-offset_left = 328.0
-offset_top = 270.0
-offset_right = 835.0
-offset_bottom = 628.0
+offset_left = 184.0
+offset_top = 272.0
+offset_right = 691.0
+offset_bottom = 630.0
 theme_override_constants/separation = 8
 alignment = 1
 
@@ -50,28 +50,41 @@ size_flags_vertical = 3
 offset_transform_enabled = true
 
 [node name="item_img" type="Label" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1247378072]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "item_img"
+vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1860729012]
 custom_minimum_size = Vector2(100, 0)
-custom_maximum_size = Vector2(0, 0)
+custom_maximum_size = Vector2(100, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [node name="item_name" type="Label" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=529211371]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 25
 text = "item_1"
+vertical_alignment = 1
 
 [node name="VSeparator2" type="VSeparator" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=871216233]
 custom_minimum_size = Vector2(100, 0)
-custom_maximum_size = Vector2(0, 0)
+custom_maximum_size = Vector2(100, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [node name="Sell" type="Button" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1742324379]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Sell"
 
 [node name="close_button" type="Button" parent="CanvasLayer/Panel" unique_id=1551710506]
@@ -82,10 +95,10 @@ text = "Close"
 
 [node name="Sell_container" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1165140652]
 layout_mode = 0
-offset_left = 887.0
-offset_top = 47.0
-offset_right = 1446.0
-offset_bottom = 628.0
+offset_left = 1006.0
+offset_top = 48.0
+offset_right = 1565.0
+offset_bottom = 629.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Sell_container" unique_id=494382484]
 layout_mode = 2

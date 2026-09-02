@@ -107,6 +107,7 @@ func till(cell: Vector2i) -> bool:
 	if dirt_layer:
 		dirt_layer.set_cells_terrain_connect([cell], TILLED_DIRT_TERRAIN_SET, TILLED_DIRT_TERRAIN)
 	tile_changed.emit(cell, State.TILLED)
+	Fx.burst(cell_to_world(cell), Color.SADDLE_BROWN)
 	return true
 
 
@@ -115,11 +116,13 @@ func water(cell: Vector2i) -> bool:
 		return false
 	if has_crop(cell):
 		_watered_today[cell] = true
+		Fx.burst(cell_to_world(cell), Color.DODGER_BLUE)
 		return true
 	_state[cell] = State.WATERED
 	if water_layer:
 		water_layer.set_cell(cell, WATERED_SOURCE_ID, Vector2i(randi_range(0, WATERED_VARIANT_COUNT - 1), 0))
 	tile_changed.emit(cell, State.WATERED)
+	Fx.burst(cell_to_world(cell), Color.DODGER_BLUE)
 	return true
 
 
@@ -149,6 +152,7 @@ func plant(cell: Vector2i, crop_id: String) -> bool:
 	_is_ready[cell] = false
 	_spawn_crop_sprite(cell, data)
 	crop_planted.emit(cell, crop_id)
+	Fx.burst(cell_to_world(cell), Color.FOREST_GREEN)
 	return true
 
 
@@ -171,6 +175,7 @@ func harvest(cell: Vector2i) -> bool:
 		water_layer.erase_cell(cell)
 	_state[cell] = State.TILLED
 	crop_harvested.emit(cell)
+	Fx.burst(cell_to_world(cell), Color.GOLD)
 	return true
 
 

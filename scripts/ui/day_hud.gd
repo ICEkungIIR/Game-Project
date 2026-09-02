@@ -16,4 +16,4 @@ func _ready() -> void:
 
 func _on_day_started(day_number: int) -> void:
 	current_day_label.text = "Day %d" % day_number
-	quota_day_label.text = "%dd" % Quota.quota_day_marker(day_number)
+	quota_day_label.text = "%dd" % Quota.due_day()

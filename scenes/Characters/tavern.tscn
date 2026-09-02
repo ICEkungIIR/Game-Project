@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dw4ntnxelh4de"]
+
+[ext_resource type="Script" uid="uid://c3giulagai5uo" path="res://scripts/characters/tavern.gd" id="1_7g3af"]
+[ext_resource type="Texture2D" uid="uid://bhd86plgi4gkh" path="res://Assets/environment/exterior.png" id="2_rx4k2"]
+[ext_resource type="Texture2D" uid="uid://bbcmp4kyp3nuk" path="res://Assets/hud/tooltip_01.png" id="3_ksi01"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnolj"]
+atlas = ExtResource("2_rx4k2")
+region = Rect2(14, 0, 132, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnolj"]
+size = Vector2(144, 85)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=175605445]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=88416504]
+script = ExtResource("1_7g3af")
+
+[node name="Icon" type="Sprite2D" parent="Area2D" unique_id=103802873]
+physics_interpolation_mode = 1
+position = Vector2(1, 0)
+texture = SubResource("AtlasTexture_dnolj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=751922010]
+position = Vector2(0, 41.5)
+shape = SubResource("RectangleShape2D_dnolj")
+
+[node name="PromptLabel" type="TextureRect" parent="Area2D" unique_id=1303803089]
+offset_left = 1.000001
+offset_top = 11.000001
+offset_right = 307.0
+offset_bottom = 215.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_ksi01")
+expand_mode = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1474101752]
+polygon = PackedVector2Array(-14, -63, -64, -15, -64, 32, -56, 32, -57, 61, 58, 60, 57, 32, 62, 32, 64, -14, 24, -30)
