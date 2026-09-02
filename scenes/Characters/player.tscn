@@ -658,6 +658,7 @@ animations = [{
 platform_floor_layers = 4294901761
 safe_margin = 7.684
 script = ExtResource("1_5vs2b")
+speed = 80.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671152387]

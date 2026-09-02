@@ -4,11 +4,15 @@ class_name AnimalResource
 ## Attach to a CharacterBody2D scene for a HARVESTABLE farm animal (e.g. a
 ## cow/chicken pen animal) — separate from monster.gd, which is for
 ## CAPTURING wild monsters (they vanish into MonsterPen on success).
-## Animals with this script stay put and can be harvested repeatedly.
+## Animals with this script wander around their spawn point (like
+## monster.gd) but stay in the world permanently and can be harvested
+## repeatedly instead of being captured.
 ##
 ## REQUIRED CHILD NODES (build in editor, same pattern as monster.gd):
 ##   AnimalResource (CharacterBody2D, this script)
-##   ├─ Icon (AnimatedSprite2D or Sprite2D)
+##   ├─ Icon (AnimatedSprite2D)     <- SpriteFrames must define
+##   │                                 idle_front/back/left/right and
+##   │                                 walk_front/back/left/right
 ##   ├─ CollisionShape2D            <- for physics body itself
 ##   ├─ InteractArea (Area2D)
 ##   │   └─ CollisionShape2D         <- detects when player is close enough
@@ -28,18 +32,69 @@ class_name AnimalResource
 @export var product_amount: int = 1
 @export var spawn_chance: float = 0.05
 @export var cooldown_days: int = 1
+@export var wander_speed: float = 40.0
+@export var wander_radius: float = 80.0
 
 var player_inside: bool = false
 var _last_harvest_day: int = -999  # far enough in the past to always allow the first harvest
+var _home_position: Vector2
+var _wander_target: Vector2
+var _wander_timer: float = 0.0
+var _facing_dir: Vector2 = Vector2.DOWN
 
 @onready var interact_prompt: Sprite2D = $InteractPrompt
+@onready var icon: AnimatedSprite2D = $Icon
 
 
 func _ready() -> void:
+	_home_position = global_position
+	_pick_new_wander_target()
+
 	var area: Area2D = $InteractArea
 	area.body_entered.connect(_on_interact_area_body_entered)
 	area.body_exited.connect(_on_interact_area_body_exited)
 	interact_prompt.visible = false
+
+
+func _physics_process(delta: float) -> void:
+	_wander_timer -= delta
+	if _wander_timer <= 0.0:
+		_pick_new_wander_target()
+
+	var to_target: Vector2 = _wander_target - global_position
+	if to_target.length() > 4.0:
+		velocity = to_target.normalized() * wander_speed
+	else:
+		velocity = Vector2.ZERO
+	move_and_slide()
+
+	if velocity != Vector2.ZERO:
+		_facing_dir = velocity.normalized()
+		_play_walk_animation(_facing_dir)
+	else:
+		_play_idle_animation()
+
+
+func _play_walk_animation(dir: Vector2) -> void:
+	if abs(dir.x) > abs(dir.y):
+		icon.play("walk_right" if dir.x > 0 else "walk_left")
+	else:
+		icon.play("walk_front" if dir.y > 0 else "walk_back")
+
+
+func _play_idle_animation() -> void:
+	if abs(_facing_dir.x) > abs(_facing_dir.y):
+		icon.play("idle_right" if _facing_dir.x > 0 else "idle_left")
+	else:
+		icon.play("idle_front" if _facing_dir.y > 0 else "idle_back")
+
+
+func _pick_new_wander_target() -> void:
+	_wander_target = _home_position + Vector2(
+		randf_range(-wander_radius, wander_radius),
+		randf_range(-wander_radius, wander_radius)
+	)
+	_wander_timer = randf_range(2.0, 4.0)
 
 
 func _on_interact_area_body_entered(body: Node2D) -> void:
@@ -76,7 +131,7 @@ func _try_harvest() -> void:
 
 
 ## Walks up to this animal's own instanced-scene root (the node whose
-## scene_file_path is set — e.g. boar.tscn's root "boar" Node2D, NOT this
+## scene_file_path is set — e.g. cow.tscn's root "cow" Node2D, NOT this
 ## inner CharacterBody2D), so the duplicate carries the whole scene
 ## structure correctly regardless of how deep this script sits in it.
 func _get_own_scene_root() -> Node:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ms83p7pf43y7"]
 
-[ext_resource type="Script" uid="uid://du4dicmfv4l7j" path="res://scripts/characters/monster.gd" id="1_n01cx"]
+[ext_resource type="Script" uid="uid://jpkw47e1adej" path="res://scripts/characters/animal_resource.gd" id="1_n01cx"]
 [ext_resource type="Texture2D" uid="uid://bu863hmvb8v8e" path="res://Assets/characters/Calf_animation_with_shadow.png" id="2_tkm6w"]
 [ext_resource type="Texture2D" uid="uid://c5osg8bjeh1hj" path="res://Assets/hud/Interaction Prompt (E).png" id="4_e45wy"]
 
@@ -338,7 +338,8 @@ scale = Vector2(0.2, 0.2)
 
 [node name="Monster" type="CharacterBody2D" parent="." unique_id=1987176986]
 script = ExtResource("1_n01cx")
-metadata/_custom_type_script = "uid://du4dicmfv4l7j"
+wander_speed = 20.0
+wander_radius = 40.0
 
 [node name="Icon" type="AnimatedSprite2D" parent="Monster" unique_id=2018521663]
 position = Vector2(1, -1)
@@ -350,16 +351,16 @@ animation = &"walk_right"
 position = Vector2(13, 11.5)
 shape = SubResource("RectangleShape2D_dnolj")
 
-[node name="CaptureArea" type="Area2D" parent="Monster" unique_id=1253609757]
+[node name="InteractArea" type="Area2D" parent="Monster" unique_id=1253609757]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Monster/CaptureArea" unique_id=928360074]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monster/InteractArea" unique_id=928360074]
 physics_interpolation_mode = 2
 position = Vector2(9.499996, 6.499996)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_a0oq5")
 one_way_collision_margin = 0.0
 
-[node name="CapturePrompt" type="Sprite2D" parent="Monster" unique_id=1893004411]
+[node name="InteractPrompt" type="Sprite2D" parent="Monster" unique_id=1893004411]
 visible = false
 position = Vector2(1, -110)
 scale = Vector2(0.1, 0.1)
