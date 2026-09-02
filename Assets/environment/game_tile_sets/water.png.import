@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k0dsj3puaf5q"
-path="res://.godot/imported/Hotbar.png-7eafd101fc3b1637d70b06ea16aa1ab3.ctex"
+uid="uid://blwv5s6ur4vk0"
+path="res://.godot/imported/water.png-5bdbde1f64e5becaa2967b14fa9f0396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/hud/Hotbar.png"
-dest_files=["res://.godot/imported/Hotbar.png-7eafd101fc3b1637d70b06ea16aa1ab3.ctex"]
+source_file="res://Assets/environment/game_tile_sets/water.png"
+dest_files=["res://.godot/imported/water.png-5bdbde1f64e5becaa2967b14fa9f0396.ctex"]
 
 [params]
 

@@ -1,18 +1,6 @@
 [gd_scene format=3 uid="uid://xoybvom8x52j"]
 
 [ext_resource type="Script" uid="uid://bfwbqc88qq6ib" path="res://scripts/managers/farm_manager.gd" id="1_farm"]
-[ext_resource type="Texture2D" uid="uid://bd4n7p14ytn61" path="res://Assets/environment/Plants.png" id="2_r3ips"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e3hyu"]
-atlas = ExtResource("2_r3ips")
-region = Rect2(105, 373, 11, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5onr"]
-atlas = ExtResource("2_r3ips")
-region = Rect2(393, 141, 13, 10)
 
 [node name="FarmManager" type="Node2D" unique_id=872491747]
 script = ExtResource("1_farm")
-tilled_texture = SubResource("AtlasTexture_e3hyu")
-watered_texture = SubResource("AtlasTexture_q5onr")
-soil_scale = 0.5

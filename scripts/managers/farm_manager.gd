@@ -8,16 +8,22 @@ extends Node2D
 ## scripts/farm/crop.gd + farm_tile.gd prototype, now wired into the
 ## tool-based interact flow player.gd already uses.
 ##
-## Tilled and watered soil are both Sprite2D overlays drawn on top of the
-## base ground layer. NOTE: game_tile_set.tres defines a "Tilled Dirt"
-## terrain (terrain_set_0), but no atlas tile is actually tagged with it
-## yet (confirmed: zero "terrain = 1" tags anywhere in the TileSet) — so
-## real terrain painting isn't usable until that's set up in the Godot
-## TileSet editor (paint the dirt tiles, assign terrain 1, set peering
-## bits). Once that's done, till() can switch back to
-## set_cells_terrain_connect() instead of this overlay.
+## Tilled soil is real terrain painting on a dedicated SoilLayer
+## TileMapLayer, which has its own standalone TileSet (terrain_set 0,
+## terrain 0 = "soil") — adapted directly from GodewValley's soil.png
+## terrain setup (same source art, same peering-bit layout, own
+## dedicated tileset just like the reference project, rather than
+## sharing one tileset with the grass terrain).
 ##
-## world.gd calls register_ground() in its _ready() to hook up the layer.
+## Watered soil is a separate dedicated WateredSoilLayer TileMapLayer,
+## also its own standalone TileSet using soil_water.png (also adapted
+## from GodewValley) — no terrain needed, just one of 3 plain variant
+## tiles picked at random per water(), same as the reference project.
+## Drying back to tilled just erases the cell on this layer, revealing
+## the tilled terrain underneath.
+##
+## world.gd calls register_ground() in its _ready() to hook up all three
+## layers (GrassLayer, SoilLayer, WateredSoilLayer).
 
 enum State { EMPTY, TILLED, WATERED }
 
@@ -26,38 +32,28 @@ signal crop_planted(cell: Vector2i, crop_id: String)
 signal crop_grew(cell: Vector2i, growth_days: int, is_ready: bool)
 signal crop_harvested(cell: Vector2i)
 
-const TILLED_COLOR := Color(0.36, 0.25, 0.16, 1.0)
-const WATERED_COLOR := Color(0.20, 0.13, 0.08, 1.0)
-
 ## Farm is an autoload, added to the scene tree before the world scene
-## loads — so its Sprite2D children draw BEHIND everything in world.tscn
-## by default tree order, even though is_visible_in_tree() reports true
-## (that only checks the visibility flag chain, not draw/occlusion order).
-## Explicit z_index forces these above the ground/nature TileMapLayers
-## regardless of tree position. Crops sit above soil overlays.
-const Z_INDEX_SOIL_OVERLAY: int = 50
+## loads — so its Sprite2D children (crop sprites) draw BEHIND everything
+## in world.tscn by default tree order, even though is_visible_in_tree()
+## reports true (that only checks the visibility flag chain, not
+## draw/occlusion order). Explicit z_index forces crops above the ground
+## TileMapLayers regardless of tree position.
 const Z_INDEX_CROP_SPRITE: int = 51
 
-## Real tilled/watered soil art, if drawn — drag into the Inspector on
-## the Farm node (scenes/managers/farm_manager.tscn). Falls back to the
-## flat-color placeholder squares if left empty, so nothing breaks while
-## art is still in progress.
-@export var tilled_texture: Texture2D
-@export var watered_texture: Texture2D
+## Matches SoilLayer's own TileSet: terrain_set_0/terrain_0 = "soil".
+const TILLED_DIRT_TERRAIN_SET: int = 0
+const TILLED_DIRT_TERRAIN: int = 0
 
-## Extra scale multiplier for soil overlay, tunable in the Inspector on
-## the Farm node. Applies on top of the automatic "cover the tile" sizing
-## (1.0 = exactly covers the tile; lower shrinks it). Crop scale lives on
-## each crop's CropData.display_scale instead — see crop_data.gd — since
-## different artists' crop art comes in at different native resolutions.
-@export var soil_scale: float = 1.0
+## Matches WateredSoilLayer's own TileSet: sources/0 = the soil_water.png
+## atlas source (3 plain variant tiles at column 0/1/2, row 0, no terrain).
+const WATERED_SOURCE_ID: int = 0
+const WATERED_VARIANT_COUNT: int = 3
 
 var ground: TileMapLayer = null
+var dirt_layer: TileMapLayer = null
+var water_layer: TileMapLayer = null
 
 var _state: Dictionary = {}        # Vector2i -> State
-var _overlays: Dictionary = {}     # Vector2i -> Sprite2D (soil color)
-var _tilled_tex: Texture2D
-var _watered_tex: Texture2D
 
 # Planted-crop tracking, separate from soil state above.
 var _crop_id: Dictionary = {}      # Vector2i -> String
@@ -67,14 +63,10 @@ var _is_ready: Dictionary = {}     # Vector2i -> bool
 var _crop_sprites: Dictionary = {} # Vector2i -> Sprite2D (crop icon)
 
 
-func register_ground(layer: TileMapLayer) -> void:
-	ground = layer
-	var size: Vector2i = layer.tile_set.tile_size
-	_tilled_tex = tilled_texture if tilled_texture else _make_flat_texture(TILLED_COLOR, size)
-	_watered_tex = watered_texture if watered_texture else _make_flat_texture(WATERED_COLOR, size)
-	print("[Farm DEBUG] register_ground: layer=%s tile_size=%s | Farm self: inside_tree=%s visible=%s z_index=%s parent=%s" % [
-		layer.name, size, is_inside_tree(), visible, z_index, (str(get_parent().name) if get_parent() else "none")
-	])
+func register_ground(ground_layer: TileMapLayer, tilled_dirt_layer: TileMapLayer, watered_dirt_layer: TileMapLayer) -> void:
+	ground = ground_layer
+	dirt_layer = tilled_dirt_layer
+	water_layer = watered_dirt_layer
 
 
 func _ready() -> void:
@@ -110,14 +102,11 @@ func is_waterable(cell: Vector2i) -> bool:
 
 func till(cell: Vector2i) -> bool:
 	if not is_tillable(cell):
-		print("[Farm DEBUG] till(%s) REJECTED — is_tillable=false (ground=%s source_id=%s state=%s)" % [
-			cell, ground, (str(ground.get_cell_source_id(cell)) if ground else "no ground"), get_state(cell)
-		])
 		return false
 	_state[cell] = State.TILLED
-	_update_overlay(cell)
+	if dirt_layer:
+		dirt_layer.set_cells_terrain_connect([cell], TILLED_DIRT_TERRAIN_SET, TILLED_DIRT_TERRAIN)
 	tile_changed.emit(cell, State.TILLED)
-	print("[Farm DEBUG] till(%s) SUCCESS" % [cell])
 	return true
 
 
@@ -128,7 +117,8 @@ func water(cell: Vector2i) -> bool:
 		_watered_today[cell] = true
 		return true
 	_state[cell] = State.WATERED
-	_update_overlay(cell)
+	if water_layer:
+		water_layer.set_cell(cell, WATERED_SOURCE_ID, Vector2i(randi_range(0, WATERED_VARIANT_COUNT - 1), 0))
 	tile_changed.emit(cell, State.WATERED)
 	return true
 
@@ -148,11 +138,9 @@ func is_plantable(cell: Vector2i) -> bool:
 
 func plant(cell: Vector2i, crop_id: String) -> bool:
 	if not is_plantable(cell):
-		print("[Farm DEBUG] plant(%s, %s) REJECTED — not plantable (state=%s has_crop=%s)" % [cell, crop_id, get_state(cell), has_crop(cell)])
 		return false
 	var data: CropData = CropDB.get_crop(crop_id)
 	if data == null:
-		print("[Farm DEBUG] plant(%s, %s) REJECTED — CropDB.get_crop returned null" % [cell, crop_id])
 		return false
 
 	_crop_id[cell] = crop_id
@@ -161,7 +149,6 @@ func plant(cell: Vector2i, crop_id: String) -> bool:
 	_is_ready[cell] = false
 	_spawn_crop_sprite(cell, data)
 	crop_planted.emit(cell, crop_id)
-	print("[Farm DEBUG] plant(%s, %s) SUCCESS — icon=%s" % [cell, crop_id, data.icon])
 	return true
 
 
@@ -180,8 +167,9 @@ func harvest(cell: Vector2i) -> bool:
 	Inventory.add_item(crop_id, data.harvest_yield)
 	_clear_crop(cell)
 	# Soil goes back to tilled (dry) — ready to plant again right away.
+	if get_state(cell) == State.WATERED and water_layer:
+		water_layer.erase_cell(cell)
 	_state[cell] = State.TILLED
-	_update_overlay(cell)
 	crop_harvested.emit(cell)
 	return true
 
@@ -196,21 +184,26 @@ func _clear_crop(cell: Vector2i) -> void:
 		_crop_sprites.erase(cell)
 
 
-## Watered soil dries back to tilled (not empty) at the start of each day.
-## Planted crops that were watered advance one growth day; unwatered crops
-## don't grow. watered_today resets for every planted cell either way.
+## Watered soil dries back to tilled (not empty) at the start of each day —
+## erase the watered_dirt cell so the wet-tile art disappears, leaving the
+## already-painted tilled terrain visible underneath. Every planted,
+## not-yet-ready crop advances by 1 growth day by default, or by 2 if it
+## was watered that day. watered_today resets for every planted cell
+## either way.
 func _on_day_started(_day_number: int) -> void:
 	for cell in _state.keys():
 		if _state[cell] == State.WATERED:
 			_state[cell] = State.TILLED
-			_update_overlay(cell)
+			if water_layer:
+				water_layer.erase_cell(cell)
 			tile_changed.emit(cell, State.TILLED)
 
 	for cell in _crop_id.keys().duplicate():
-		if _watered_today.get(cell, false) and not _is_ready.get(cell, false):
+		if not _is_ready.get(cell, false):
 			var data: CropData = CropDB.get_crop(_crop_id[cell])
 			if data:
-				_growth_days[cell] += 1
+				var step: int = 2 if _watered_today.get(cell, false) else 1
+				_growth_days[cell] += step
 				if _growth_days[cell] >= data.days_to_grow:
 					_is_ready[cell] = true
 				_update_crop_sprite(cell, data)
@@ -225,9 +218,6 @@ func _spawn_crop_sprite(cell: Vector2i, data: CropData) -> void:
 	add_child(sprite)
 	_crop_sprites[cell] = sprite
 	_update_crop_sprite(cell, data)
-	print("[Farm DEBUG] _spawn_crop_sprite(%s): pos=%s parent=%s visible_in_tree=%s z_index=%s" % [
-		cell, sprite.global_position, sprite.get_parent().name, sprite.is_visible_in_tree(), sprite.z_index
-	])
 
 
 ## Uses real per-stage art (CropData.stage_textures) when a crop has it —
@@ -246,20 +236,12 @@ func _update_crop_sprite(cell: Vector2i, data: CropData) -> void:
 	if not data.stage_textures.is_empty():
 		var stage_index: int = clampi(growth_days, 0, data.stage_textures.size() - 1)
 		sprite.texture = data.stage_textures[stage_index]
-		var applied_scale: float = _resolve_crop_scale(data, sprite.texture)
-		sprite.scale = Vector2.ONE * applied_scale
-		print("[Farm DEBUG] _update_crop_sprite(%s) [stage_textures path] tex_size=%s applied_scale=%s" % [
-			cell, sprite.texture.get_size(), applied_scale
-		])
+		sprite.scale = Vector2.ONE * _resolve_crop_scale(data, sprite.texture)
 		return
 
 	# Placeholder: no stage art yet.
 	sprite.texture = data.icon
-	var applied_scale: float = _resolve_crop_scale(data, sprite.texture)
-	sprite.scale = Vector2.ONE * applied_scale
-	print("[Farm DEBUG] _update_crop_sprite(%s) [icon placeholder path] tex=%s tex_size=%s applied_scale=%s visible_in_tree=%s" % [
-		cell, sprite.texture, (str(sprite.texture.get_size()) if sprite.texture else "null"), applied_scale, sprite.is_visible_in_tree()
-	])
+	sprite.scale = Vector2.ONE * _resolve_crop_scale(data, sprite.texture)
 
 
 ## AUTO (display_scale <= 0.0): tile_size.x / max(texture width, height) —
@@ -277,46 +259,3 @@ func _resolve_crop_scale(data: CropData, tex: Texture2D) -> float:
 		return 1.0
 	var tile_size: Vector2 = Vector2(ground.tile_set.tile_size) if ground else Vector2(16, 16)
 	return tile_size.x / largest_dimension
-
-
-func _update_overlay(cell: Vector2i) -> void:
-	var state: int = get_state(cell)
-	if state == State.EMPTY:
-		if _overlays.has(cell):
-			_overlays[cell].queue_free()
-			_overlays.erase(cell)
-		return
-
-	var sprite: Sprite2D = _overlays.get(cell)
-	if sprite == null:
-		sprite = Sprite2D.new()
-		sprite.z_index = Z_INDEX_SOIL_OVERLAY
-		add_child(sprite)
-		_overlays[cell] = sprite
-	sprite.texture = _tilled_tex if state == State.TILLED else _watered_tex
-	sprite.global_position = cell_to_world(cell)
-
-	# Cover the whole tile (no gaps at the edges), even if the source art's
-	# aspect ratio doesn't exactly match the tile — better than leaving
-	# slivers of grass showing through a soil patch.
-	var tile_size: Vector2 = Vector2(ground.tile_set.tile_size) if ground else Vector2(16, 16)
-	sprite.scale = Vector2.ONE * _cover_scale(sprite.texture.get_size(), tile_size) * soil_scale
-	print("[Farm DEBUG] _update_overlay(%s) state=%s tex=%s tex_size=%s pos=%s scale=%s visible_in_tree=%s parent=%s" % [
-		cell, state, sprite.texture, (str(sprite.texture.get_size()) if sprite.texture else "null"),
-		sprite.global_position, sprite.scale, sprite.is_visible_in_tree(), sprite.get_parent().name
-	])
-
-
-## Scale that fully covers target_size (may crop slightly on one axis) —
-## used for background/ground sprites like soil, where a gap showing the
-## tile underneath looks worse than a tiny overflow at the edges.
-func _cover_scale(tex_size: Vector2, target_size: Vector2) -> float:
-	if tex_size.x <= 0.0 or tex_size.y <= 0.0:
-		return 1.0
-	return max(target_size.x / tex_size.x, target_size.y / tex_size.y)
-
-
-func _make_flat_texture(color: Color, size: Vector2i) -> ImageTexture:
-	var img := Image.create(max(size.x, 1), max(size.y, 1), false, Image.FORMAT_RGBA8)
-	img.fill(color)
-	return ImageTexture.create_from_image(img)

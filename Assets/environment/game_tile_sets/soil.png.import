@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k0dsj3puaf5q"
-path="res://.godot/imported/Hotbar.png-7eafd101fc3b1637d70b06ea16aa1ab3.ctex"
+uid="uid://dlcahddne2gks"
+path="res://.godot/imported/soil.png-f7a15a36fa9ab2b7affd749e14d7d83d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/hud/Hotbar.png"
-dest_files=["res://.godot/imported/Hotbar.png-7eafd101fc3b1637d70b06ea16aa1ab3.ctex"]
+source_file="res://Assets/environment/game_tile_sets/soil.png"
+dest_files=["res://.godot/imported/soil.png-f7a15a36fa9ab2b7affd749e14d7d83d.ctex"]
 
 [params]
 

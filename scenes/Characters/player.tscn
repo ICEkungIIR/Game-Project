@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bsikb5o0xv0um" path="res://scripts/farm/tile_highlight.gd" id="6_tile_highlight"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(16, 32)
+size = Vector2(16, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vcpl"]
 atlas = ExtResource("3_7xbc7")
@@ -661,6 +661,7 @@ script = ExtResource("1_5vs2b")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671152387]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="TileHighlight" type="Node2D" parent="." unique_id=1504968925]
@@ -669,7 +670,7 @@ top_level = true
 script = ExtResource("6_tile_highlight")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=366018311]
-zoom = Vector2(5, 5)
+zoom = Vector2(7, 7)
 drag_vertical_offset = -0.25
 script = ExtResource("2_iw5iu")
 max_zoom = 5.0

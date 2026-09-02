@@ -6,7 +6,7 @@
 - [x] **เพิ่มชนิดพืชให้มากกว่า wheat** - ตอนนี้มีแค่ resources/Crops/wheat.tres อันเดียว ต้องมีอย่างน้อย 2-3 ชนิดตาม GDD
 - [ ] **ระบบจับมอนสเตอร์ (monster capture)** - core loop (wander, capture area, กด E จับ, MonsterPen เก็บของ) ทำงานแล้ว + มี prompt "กด E" โชว์เวลาเข้าใกล้พอ
   - [ ] ตอนจับพลาด (escape) มีแค่ print() ยังไม่มี feedback ให้ผู้เล่นเห็นจริง (popup/animation/เสียง)
-  - [ ] `monster_id` ของ Mon_test.tscn ยังเป็น "slime" default ทั้งที่ sprite เปลี่ยนเป็น Boar แล้ว — เช็คว่าตั้งใจหรือ typo ค้าง
+  - [x] `monster_id` ของ Mon_test.tscn ยังเป็น "slime" default ทั้งที่ sprite เปลี่ยนเป็น Boar แล้ว — เช็คว่าตั้งใจหรือ typo ค้าง
 - [x] **จุดขายของ (sell point)** - ตัดสินใจแล้ว: ขายให้ NPC vendor (NPC_vender.tscn ต่อ SellUI.gd ต่อ Money แล้ว, ทำงานได้จริงใน world.tscn — กด E ที่ vendor เปิด sell UI, ขายทีละชนิดหรือขายหมดทีเดียว)
 - [x] **ระบบ plant/growth/harvest จริง** - ต่อเข้ากับ FarmManager (Farm autoload) แล้ว: เลือกพืชใน hotbar → กด E บนดินที่ไถแล้วเพื่อปลูก (หัก item 1 ชิ้น), รดน้ำต่อพืชที่ปลูกแล้วให้โตนับวันจาก TimeM.day_started, สไปรท์พืชโชว์จริงในทุ่ง (ใช้ icon เดิมของแต่ละพืช สเกลขึ้นตามวันที่โต — รอ art ระยะการโตจริงทีหลัง), กด E ตอนพืชพร้อมเก็บเกี่ยวเพื่อ harvest คืน item เข้า inventory และดินกลับเป็น tilled ให้ปลูกใหม่ได้ทันที; มีปุ่ม debug K = ข้ามวัน (TimeM.next_day()) ไว้เทสการโตเร็วๆ
 - [ ] **ต่อ UI พื้นฐาน** - inventory + ปุ่ม/หน้าจอขายของ ให้ผู้เล่นเห็นผลของ money_manager
