@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8ogfu6pok6un"]
+
+[ext_resource type="Texture2D" uid="uid://crgfhnchxd7is" path="res://Assets/ui/Pass.png" id="1_hauwf"]
+
+[node name="QuotaPopup" type="CanvasLayer" unique_id=1250800001]
+
+[node name="PopupImage" type="TextureRect" parent="." unique_id=225811243]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -946.5
+offset_top = -155.5
+offset_right = 946.5
+offset_bottom = 155.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hauwf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=305159595]
