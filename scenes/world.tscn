@@ -10,10 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://co5gxpi6cr46s" path="res://Assets/environment/game_tile_sets/soil_water.png" id="5_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://21tjwi72dsve" path="res://scenes/hud/craft_menu.tscn" id="6_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://c40ve2ferd5cb" path="res://scenes/hud/HUD.tscn" id="6_qfnet"]
-[ext_resource type="PackedScene" uid="uid://6aecshv87ojf" path="res://scenes/objects/trees.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://6aecshv87ojf" path="res://scenes/Objects/trees.tscn" id="7_i7141"]
 [ext_resource type="Script" uid="uid://cmehfaf3o50re" path="res://scripts/managers/day_night_cycle.gd" id="8_daynight"]
 [ext_resource type="Texture2D" uid="uid://dcikrgegbxhio" path="res://resources/environment/day_night_gradient.tres" id="9_daynight"]
 [ext_resource type="PackedScene" uid="uid://ms83p7pf43y7" path="res://scenes/characters/cow.tscn" id="14_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://8ogfu6pok6un" path="res://scenes/quota_popup.tscn" id="12_q5onr"]
+[ext_resource type="Script" uid="uid://3kb0fmyqpfjk" path="res://scripts/quota_popup.gd" id="13_jhx03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r4gi"]
 texture = ExtResource("2_7r4gi")
@@ -905,3 +907,5 @@ position = Vector2(601, 93)
 
 [node name="cow" parent="." unique_id=177480442 instance=ExtResource("14_o8fc1")]
 position = Vector2(308, 274)
+[node name="QuotaPopup" parent="." unique_id=1250800001 instance=ExtResource("12_q5onr")]
+script = ExtResource("13_jhx03")
