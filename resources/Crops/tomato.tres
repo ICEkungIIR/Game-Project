@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://vjad2scfk8jc" path="res://Assets/resources/Crops/crop_seed.png" id="1_hl10j"]
 [ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/farm/crop_data.gd" id="1_ty0hd"]
+[ext_resource type="Texture2D" uid="uid://ructk07xbs74" path="res://Assets/resources/Crops/Tomato - 1.png" id="3_q03y5"]
+[ext_resource type="Texture2D" uid="uid://5evvpmeqce2x" path="res://Assets/resources/Crops/Tomato - 2.png" id="4_v2u2w"]
+[ext_resource type="Texture2D" uid="uid://yumpgvveac32" path="res://Assets/resources/Crops/Tomato - 3.png" id="5_oao0m"]
+[ext_resource type="Texture2D" uid="uid://cqo6xa5jv0ony" path="res://Assets/resources/Crops/Tomato - 4.png" id="6_qoj0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfjyo"]
 atlas = ExtResource("1_hl10j")
@@ -12,6 +16,7 @@ script = ExtResource("1_ty0hd")
 crop_id = "tomato"
 days_to_grow = 4
 harvest_yield = 3
+stage_textures = Array[Texture2D]([ExtResource("3_q03y5"), ExtResource("4_v2u2w"), ExtResource("5_oao0m"), ExtResource("6_qoj0r")])
 sell_price = 10
 icon = SubResource("AtlasTexture_rfjyo")
 metadata/_custom_type_script = "uid://coq65bp31wu6p"

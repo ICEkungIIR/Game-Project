@@ -29,6 +29,7 @@ Music="*res://scenes/managers/music_manager.tscn"
 Sfx="*res://scenes/managers/sfx_manager.tscn"
 Farm="*res://scenes/managers/farm_manager.tscn"
 Stats="*res://scripts/managers/stats_manager.gd"
+Quota="*res://scripts/managers/quota_manager.gd"
 
 [display]
 

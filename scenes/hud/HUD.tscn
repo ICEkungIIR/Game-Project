@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c40ve2ferd5cb"]
 
 [ext_resource type="PackedScene" uid="uid://cxjqmp8v1n0j2" path="res://scenes/hud/coin_HUD.tscn" id="1_5ip4n"]
+[ext_resource type="PackedScene" path="res://scenes/hud/quota_HUD.tscn" id="8_quotahud"]
 [ext_resource type="PackedScene" uid="uid://30hi32yoxt8t" path="res://scenes/hud/character_panel.tscn" id="1_ucsqe"]
 [ext_resource type="PackedScene" uid="uid://3invk7p4lps5" path="res://scenes/hud/time_HUD.tscn" id="2_l8xe2"]
 [ext_resource type="PackedScene" uid="uid://cuuth32kb1cfr" path="res://scenes/hud/day_HUD.tscn" id="3_0qpk7"]
@@ -40,6 +41,11 @@ layout_mode = 2
 size_flags_vertical = 2
 
 [node name="Money" parent="VBoxContainer" unique_id=1101931803 instance=ExtResource("1_5ip4n")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 2
+
+[node name="Quota" parent="VBoxContainer" unique_id=1097609089 instance=ExtResource("8_quotahud")]
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 2

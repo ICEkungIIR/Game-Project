@@ -1,0 +1,24 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://o4vgawyhtlbx" path="res://Assets/hud/coin display.png" id="1_cjtlw"]
+[ext_resource type="Script" path="res://scripts/ui/quota_hud.gd" id="2_quotahud"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_quotahud")
+
+[node name="CoinDisplay" type="Sprite2D" parent="."]
+scale = Vector2(0.34228507, 0.34228516)
+texture = ExtResource("1_cjtlw")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -36.0
+offset_right = 155.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 32
+text = "0"
