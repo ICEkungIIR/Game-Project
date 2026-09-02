@@ -32,6 +32,7 @@ Stats="*res://scripts/managers/stats_manager.gd"
 Quota="*res://scripts/managers/quota_manager.gd"
 RecipeDB="*uid://bpc8llrlk6kf7"
 Transition="*uid://dagful7h8paod"
+Fx="*res://scripts/managers/fx_manager.gd"
 
 [display]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn8q1rcovde38"
+path="res://.godot/imported/ES_River Walk -Opening.mp3-8324f4472ecdf9ed969a1c3ee756fd50.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/bgm/ES_River Walk -Opening.mp3"
+dest_files=["res://.godot/imported/ES_River Walk -Opening.mp3-8324f4472ecdf9ed969a1c3ee756fd50.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

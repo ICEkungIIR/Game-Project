@@ -267,4 +267,4 @@ func _ready():
 	#print(Inventory.items)
 	#print(Money.spend(200))
 	#print(Money.amount)
-	Inventory.add_item("tomato", 1)
+	Inventory.add_item("tomato", 10)

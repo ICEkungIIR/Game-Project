@@ -81,45 +81,58 @@ func _refresh() -> void:
 		var qty: int = Inventory.items[item_id]
 		if qty <= 0:
 			continue
-		var data: CropData = CropDB.get_crop(item_id)
-		if data == null:
-			continue  # no CropData registered for this item_id yet
-		total_value += data.sell_price * qty
-		_add_row(data, qty)
+		var sell_price: int = _get_sell_price(item_id)
+		if sell_price < 0:
+			continue  # no sellable data registered for this item_id yet
+		total_value += sell_price * qty
+		_add_row(item_id, sell_price, qty)
 
 	total_label.text = "Total: %d gold" % total_value
 
 
-func _add_row(data: CropData, qty: int) -> void:
+func _add_row(item_id: String, sell_price: int, qty: int) -> void:
 	var row: HBoxContainer = item_template.duplicate()
 	row.visible = true
-	row.get_node("item_img").text = data.crop_id  # TODO: swap for real icon/TextureRect
-	row.get_node("item_name").text = "x%d  (%d each)" % [qty, data.sell_price]
+	row.get_node("item_img").text = item_id  # TODO: swap for real icon/TextureRect
+	row.get_node("item_name").text = "x%d  (%d each)" % [qty, sell_price]
 
 	var row_sell_btn: Button = row.get_node("Sell")
-	row_sell_btn.pressed.connect(func(): _sell_one_stack(data))
+	row_sell_btn.pressed.connect(func(): _sell_one_stack(item_id, sell_price))
 
 	item_list_container.add_child(row)
 
 
-func _sell_one_stack(data: CropData) -> void:
-	var qty: int = Inventory.get_amount(data.crop_id)
+func _sell_one_stack(item_id: String, sell_price: int) -> void:
+	var qty: int = Inventory.get_amount(item_id)
 	if qty <= 0:
 		return
-	if Inventory.remove_item(data.crop_id, qty):
-		Money.add(data.sell_price * qty)
+	if Inventory.remove_item(item_id, qty):
+		Money.add(sell_price * qty)
 	_refresh()
 
 
 func _sell_all() -> void:
 	for item_id: String in Inventory.items.keys().duplicate():
 		var qty: int = Inventory.items[item_id]
-		var data: CropData = CropDB.get_crop(item_id)
-		if data == null or qty <= 0:
+		var sell_price: int = _get_sell_price(item_id)
+		if sell_price < 0 or qty <= 0:
 			continue
 		Inventory.remove_item(item_id, qty)
-		Money.add(data.sell_price * qty)
+		Money.add(sell_price * qty)
 	_refresh()
+
+
+## Looks up the sell price for an item_id from whichever database has it
+## registered — crops first, then crafted/recipe items. Returns -1 if the
+## item isn't sellable (no matching data anywhere).
+func _get_sell_price(item_id: String) -> int:
+	var crop_data: CropData = CropDB.get_crop(item_id)
+	if crop_data:
+		return crop_data.sell_price
+	var recipe_data: Recipe = RecipeDB.get_recipe(item_id)
+	if recipe_data:
+		return recipe_data.sell_price
+	return -1
 
 
 func _update_coin_label() -> void:

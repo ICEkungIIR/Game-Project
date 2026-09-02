@@ -41,8 +41,17 @@ func update_ui() -> void:
 		tooltip_text = crop_data.crop_id
 	else:
 		var tool_data: Tools = ToolDB.get_tool(item_id)
-		icon.texture = tool_data.icon if tool_data else null
-		tooltip_text = tool_data.tools_id if tool_data else item_id
+		if tool_data:
+			icon.texture = tool_data.icon
+			tooltip_text = tool_data.tools_id
+		else:
+			var recipe_data: Recipe = RecipeDB.get_recipe(item_id)
+			if recipe_data:
+				icon.texture = recipe_data.icon
+				tooltip_text = recipe_data.display_name if recipe_data.display_name != "" else recipe_data.recipe_id
+			else:
+				icon.texture = null
+				tooltip_text = item_id
 
 	var amount: int = Inventory.get_amount(item_id)
 	count_label.text = str(amount) if amount > 1 else ""

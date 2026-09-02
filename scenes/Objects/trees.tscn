@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6aecshv87ojf"]
 
 [ext_resource type="Texture2D" uid="uid://dbccx5j8wlcqd" path="res://Assets/environment/Trees_animation.png" id="1_r5gwf"]
+[ext_resource type="Script" path="res://scripts/objects/tree_occlusion.gd" id="2_occlude"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnolj"]
 atlas = ExtResource("1_r5gwf")
@@ -10,11 +11,26 @@ region = Rect2(128, 32, 48, 48)
 radius = 8.0
 height = 16.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_occlude"]
+size = Vector2(40, 44)
+
 [node name="Sprite2D" type="Sprite2D" unique_id=1327720098]
 texture = SubResource("AtlasTexture_dnolj")
+script = ExtResource("2_occlude")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=683031908]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2009217549]
 position = Vector2(0, 14)
 shape = SubResource("CapsuleShape2D_6elqx")
+
+[node name="OcclusionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OcclusionArea"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_occlude")
+
+[connection signal="body_entered" from="OcclusionArea" to="." method="_on_occlusion_area_body_entered"]
+[connection signal="body_exited" from="OcclusionArea" to="." method="_on_occlusion_area_body_exited"]
