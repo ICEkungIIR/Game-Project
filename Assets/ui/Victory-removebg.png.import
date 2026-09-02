@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5osg8bjeh1hj"
-path="res://.godot/imported/Interaction Prompt (E).png-d3d7a76d62d33530de88971948bcdfb1.ctex"
+uid="uid://dxp322kb876r0"
+path="res://.godot/imported/Victory-removebg.png-e8bd104c0b819bdd6fe4212e6fd643f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HUD/Interaction Prompt (E).png"
-dest_files=["res://.godot/imported/Interaction Prompt (E).png-d3d7a76d62d33530de88971948bcdfb1.ctex"]
+source_file="res://Assets/ui/Victory-removebg.png"
+dest_files=["res://.godot/imported/Victory-removebg.png-e8bd104c0b819bdd6fe4212e6fd643f6.ctex"]
 
 [params]
 

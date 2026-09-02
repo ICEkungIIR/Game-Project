@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dq1yss2yw8yxv"]
+
+[ext_resource type="Script" uid="uid://63fjaxf211ka" path="res://scripts/win_scene.gd" id="1_p78a6"]
+[ext_resource type="Texture2D" uid="uid://dxp322kb876r0" path="res://Assets/ui/Victory-removebg.png" id="2_aw8vk"]
+
+[node name="WinScene" type="Node2D" unique_id=591346659]
+script = ExtResource("1_p78a6")
+
+[node name="VictoryImage" type="TextureRect" parent="." unique_id=1101375753]
+offset_left = 13.5
+offset_top = 384.5
+offset_right = 1917.0
+offset_bottom = 723.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_aw8vk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ContinueButton" type="Button" parent="." unique_id=367974121]
+offset_left = 898.0
+offset_top = 697.0
+offset_right = 1033.0
+offset_bottom = 760.0
+text = "Continue"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=15374166]
