@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://vjad2scfk8jc" path="res://Assets/resources/Crops/crop_seed.png" id="1_hl10j"]
 [ext_resource type="Script" uid="uid://coq65bp31wu6p" path="res://scripts/farm/crop_data.gd" id="1_ty0hd"]
-[ext_resource type="Texture2D" uid="uid://ructk07xbs74" path="res://Assets/resources/Crops/Tomato - 1.png" id="3_q03y5"]
-[ext_resource type="Texture2D" uid="uid://5evvpmeqce2x" path="res://Assets/resources/Crops/Tomato - 2.png" id="4_v2u2w"]
-[ext_resource type="Texture2D" uid="uid://yumpgvveac32" path="res://Assets/resources/Crops/Tomato - 3.png" id="5_oao0m"]
-[ext_resource type="Texture2D" uid="uid://cqo6xa5jv0ony" path="res://Assets/resources/Crops/Tomato - 4.png" id="6_qoj0r"]
+[ext_resource type="Texture2D" uid="uid://fxptc5s2s3mh" path="res://Assets/resources/Crops/Tomato/Tomato - 1.png" id="3_q03y5"]
+[ext_resource type="Texture2D" uid="uid://b5qpurhmc1qdg" path="res://Assets/resources/Crops/Tomato/Tomato - 2.png" id="4_v2u2w"]
+[ext_resource type="Texture2D" uid="uid://8y24gybonlyp" path="res://Assets/resources/Crops/Tomato/Tomato - 3.png" id="5_oao0m"]
+[ext_resource type="Texture2D" uid="uid://pfy2p12h8mfw" path="res://Assets/resources/Crops/Tomato/Tomato - 4.png" id="6_qoj0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfjyo"]
 atlas = ExtResource("1_hl10j")

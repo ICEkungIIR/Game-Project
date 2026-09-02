@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yumpgvveac32"
-path="res://.godot/imported/Tomato - 3.png-60fd1f7921998e6fb4e249d94c6354b4.ctex"
+uid="uid://fxptc5s2s3mh"
+path="res://.godot/imported/Tomato - 1.png-eabc87e0f3024de1bc0446101dbeb9a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/resources/Crops/Tomato - 3.png"
-dest_files=["res://.godot/imported/Tomato - 3.png-60fd1f7921998e6fb4e249d94c6354b4.ctex"]
+source_file="res://Assets/resources/Crops/Tomato/Tomato - 1.png"
+dest_files=["res://.godot/imported/Tomato - 1.png-eabc87e0f3024de1bc0446101dbeb9a3.ctex"]
 
 [params]
 
