@@ -1,15 +1,23 @@
 [gd_scene format=3 uid="uid://ciq680wjyt4dq"]
 
 [ext_resource type="Script" uid="uid://b52snv55124sk" path="res://scripts/ui/SellUI.gd" id="1_sellui"]
+[ext_resource type="Texture2D" uid="uid://4enaecs466mf" path="res://Assets/HUD/coin_icon.png" id="2_68svs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33w08"]
+bg_color = Color(0.2601587, 0.2601587, 0.2601587, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 12
+shadow_color = Color(0.16862746, 0.11372549, 0.078431375, 0.9019608)
 
 [node name="Selling_UI" type="Control" unique_id=910135335]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_sellui")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=765478549]
-visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=461131653]
 anchors_preset = 15
@@ -17,18 +25,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_33w08")
 
 [node name="item_list_container" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=23814195]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 268.0
-offset_right = 571.0
-offset_bottom = 626.0
+offset_left = 328.0
+offset_top = 270.0
+offset_right = 835.0
+offset_bottom = 628.0
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="item_list" type="Label" parent="CanvasLayer/Panel/item_list_container" unique_id=252709063]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_font_sizes/font_size = 24
 text = "Item List"
 
 [node name="Item_box" type="HBoxContainer" parent="CanvasLayer/Panel/item_list_container" unique_id=397718677]
@@ -40,6 +51,7 @@ offset_transform_enabled = true
 
 [node name="item_img" type="Label" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1247378072]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "item_img"
 
 [node name="VSeparator" type="VSeparator" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1860729012]
@@ -49,6 +61,7 @@ layout_mode = 2
 
 [node name="item_name" type="Label" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=529211371]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "item_1"
 
 [node name="VSeparator2" type="VSeparator" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=871216233]
@@ -57,6 +70,7 @@ custom_maximum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Sell" type="Button" parent="CanvasLayer/Panel/item_list_container/Item_box" unique_id=1742324379]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Sell"
 
@@ -68,28 +82,38 @@ text = "Close"
 
 [node name="Sell_container" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1165140652]
 layout_mode = 0
-offset_left = 573.0
-offset_top = 31.0
-offset_right = 1132.0
-offset_bottom = 612.0
+offset_left = 887.0
+offset_top = 47.0
+offset_right = 1446.0
+offset_bottom = 628.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Sell_container" unique_id=494382484]
 layout_mode = 2
 size_flags_vertical = 10
 size_flags_stretch_ratio = 6.0
+theme_override_constants/separation = 6
 
 [node name="Total" type="Label" parent="CanvasLayer/Panel/Sell_container/HBoxContainer" unique_id=389564705]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 10.0
+theme_override_font_sizes/font_size = 26
 text = "Total"
+
+[node name="CoinIcon" type="TextureRect" parent="CanvasLayer/Panel/Sell_container/HBoxContainer" unique_id=1555089388]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_68svs")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Coin_amount" type="Label" parent="CanvasLayer/Panel/Sell_container/HBoxContainer" unique_id=330067555]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 10.0
+theme_override_font_sizes/font_size = 23
 text = "<coin amount>"
 
 [node name="sell_button" type="Button" parent="CanvasLayer/Panel/Sell_container" unique_id=568816414]

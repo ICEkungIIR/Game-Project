@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lf7wfxjunh6i"
-path="res://.godot/imported/milk_recipe.png-f02660968fe43d187c7df5954d4f0f31.ctex"
+uid="uid://4enaecs466mf"
+path="res://.godot/imported/coin_icon.png-f67e826fcc5e79cbab29bdeeb5160c39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/resources/Recipes/milk_recipe.png"
-dest_files=["res://.godot/imported/milk_recipe.png-f02660968fe43d187c7df5954d4f0f31.ctex"]
+source_file="res://Assets/HUD/coin_icon.png"
+dest_files=["res://.godot/imported/coin_icon.png-f67e826fcc5e79cbab29bdeeb5160c39.ctex"]
 
 [params]
 
