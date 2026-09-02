@@ -17,3 +17,7 @@ class_name Recipe
 @export var result_amount: int = 1
 @export var sell_price: int = 15
 @export var icon: Texture2D
+
+@export var category: String = "food"
+@export var display_name: String = ""
+@export var description: String = ""

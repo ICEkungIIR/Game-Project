@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c3n16qbgajvls"]
+
+[ext_resource type="Script" uid="uid://hev3snjse2r8" path="res://scripts/ingredient_row.gd" id="1_3gy6c"]
+
+[node name="IngredientRow" type="HBoxContainer" unique_id=727156063 node_paths=PackedStringArray("icon", "name_label", "amount_label")]
+script = ExtResource("1_3gy6c")
+icon = NodePath("Icon")
+name_label = NodePath("NameLabel")
+amount_label = NodePath("AmountLabel")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=2081250952]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="." unique_id=1777089548]
+layout_mode = 2
+
+[node name="AmountLabel" type="Label" parent="." unique_id=1161770176]
+layout_mode = 2

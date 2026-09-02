@@ -7,9 +7,10 @@
 [ext_resource type="Script" uid="uid://jsolc5xn3yd1" path="res://scripts/world.gd" id="3_world"]
 [ext_resource type="PackedScene" uid="uid://c220x76ldiw77" path="res://scenes/characters/boar.tscn" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dw4ntnxelh4de" path="res://scenes/characters/NPC_vender.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://21tjwi72dsve" path="res://scenes/hud/craft_menu.tscn" id="6_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://co5gxpi6cr46s" path="res://Assets/environment/game_tile_sets/soil_water.png" id="5_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://c40ve2ferd5cb" path="res://scenes/hud/HUD.tscn" id="6_qfnet"]
-[ext_resource type="PackedScene" uid="uid://6aecshv87ojf" path="res://scenes/objects/trees.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://6aecshv87ojf" path="res://scenes/Objects/trees.tscn" id="7_i7141"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r4gi"]
 texture = ExtResource("2_7r4gi")
@@ -845,6 +846,8 @@ z_index = 1
 position = Vector2(161, 127)
 
 [node name="HUD" parent="." unique_id=1842482411 instance=ExtResource("6_qfnet")]
+
+[node name="CraftMenu" parent="HUD" unique_id=1016584627 instance=ExtResource("6_4mrxx")]
 
 [node name="Animal" type="Node2D" parent="." unique_id=555086159]
 metadata/_edit_lock_ = true
