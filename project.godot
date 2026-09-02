@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tavern of Twilight"
-run/main_scene="uid://coar0w52ewb50"
+run/main_scene="uid://b56f3wjwndvci"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 

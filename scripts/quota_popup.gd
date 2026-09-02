@@ -11,7 +11,7 @@ const DISPLAY_SECONDS: float = 2.5
 func _ready() -> void:
 	hide()
 
-func show_popup(cycle_number: int, amount_paid: int) -> void:
+func show_popup(_cycle_number: int, _amount_paid: int) -> void:
 	if _showing:
 		return
 	_showing = true
