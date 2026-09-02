@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://21tjwi72dsve"]
+
+[ext_resource type="Theme" uid="uid://cvkold5l4wenn" path="res://resources/craft_menu_theme.tres" id="1_mcwdw"]
+[ext_resource type="Script" uid="uid://dfq6w2tnf6xc6" path="res://scripts/craft_menu.gd" id="1_uo541"]
+[ext_resource type="FontFile" uid="uid://b5fakr0tqhml5" path="res://docs/ByteBounce.ttf" id="2_tr5qq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo541"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.23529412)
+
+[node name="CraftMenu" type="Control" unique_id=1016584627 node_paths=PackedStringArray("category_tabs", "recipe_list", "detail_icon", "detail_name", "detail_desc", "ingredients_box", "craft_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mcwdw")
+script = ExtResource("1_uo541")
+category_tabs = NodePath("Panel/MarginContainer/VBox/CategoryTabs")
+recipe_list = NodePath("Panel/MarginContainer/VBox/Content/ScrollContainer/RecipeList")
+detail_icon = NodePath("Panel/MarginContainer/VBox/Content/DetailPanel/Icon")
+detail_name = NodePath("Panel/MarginContainer/VBox/Content/DetailPanel/NameLabel")
+detail_desc = NodePath("Panel/MarginContainer/VBox/Content/DetailPanel/DescLabel")
+ingredients_box = NodePath("Panel/MarginContainer/VBox/Content/DetailPanel/IngredientsBox")
+craft_button = NodePath("Panel/MarginContainer/VBox/Content/DetailPanel/CraftButton")
+
+[node name="Panel" type="Panel" parent="." unique_id=1182012041]
+custom_minimum_size = Vector2(1000, 550)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -275.0
+offset_right = 500.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uo541")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=487491133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1743770389]
+layout_mode = 2
+
+[node name="CategoryTabs" type="HBoxContainer" parent="Panel/MarginContainer/VBox" unique_id=1440128631]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Content" type="HBoxContainer" parent="Panel/MarginContainer/VBox" unique_id=1923034962]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBox/Content" unique_id=1243385114]
+custom_minimum_size = Vector2(220, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RecipeList" type="VBoxContainer" parent="Panel/MarginContainer/VBox/Content/ScrollContainer" unique_id=1656497090]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="DetailPanel" type="VBoxContainer" parent="Panel/MarginContainer/VBox/Content" unique_id=69180126]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="Panel/MarginContainer/VBox/Content/DetailPanel" unique_id=1589025384]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/VBox/Content/DetailPanel" unique_id=721057147]
+layout_mode = 2
+
+[node name="DescLabel" type="Label" parent="Panel/MarginContainer/VBox/Content/DetailPanel" unique_id=951133303]
+layout_mode = 2
+
+[node name="IngredientsBox" type="VBoxContainer" parent="Panel/MarginContainer/VBox/Content/DetailPanel" unique_id=850129971]
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="Panel/MarginContainer/VBox/Content/DetailPanel" unique_id=1536364336]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tr5qq")
+theme_override_font_sizes/font_size = 40
+text = "Craft"
