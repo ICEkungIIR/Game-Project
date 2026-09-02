@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://conkrch4gxc4n"
-path="res://.godot/imported/inventory Background Removed new.png-8718fbe05c856edc25cc5b356d51841a.ctex"
+path="res://.godot/imported/inventory Background Removed new.png-79b6db4d7ff44c92d9816976a8e94871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/hud/inventory Background Removed new.png"
-dest_files=["res://.godot/imported/inventory Background Removed new.png-8718fbe05c856edc25cc5b356d51841a.ctex"]
+source_file="res://Assets/HUD/inventory Background Removed new.png"
+dest_files=["res://.godot/imported/inventory Background Removed new.png-79b6db4d7ff44c92d9816976a8e94871.ctex"]
 
 [params]
 
