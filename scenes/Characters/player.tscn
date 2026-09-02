@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://b332141dauwno" path="res://scripts/characters/camera_2d.gd" id="2_iw5iu"]
 [ext_resource type="Texture2D" uid="uid://2a0aw3b5m05q" path="res://Assets/characters/player/Player.png" id="3_7xbc7"]
 [ext_resource type="Texture2D" uid="uid://dedqtxav48p6q" path="res://Assets/characters/player/Player_Actions.png" id="4_ipnkg"]
-[ext_resource type="AudioStream" uid="uid://bbgc215n4qc8n" path="res://Assets/audio/sfx/dig_tiling.mp3" id="5_dig_tiling"]
 [ext_resource type="Script" uid="uid://bsikb5o0xv0um" path="res://scripts/farm/tile_highlight.gd" id="6_tile_highlight"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
@@ -659,8 +658,6 @@ animations = [{
 platform_floor_layers = 4294901761
 safe_margin = 7.684
 script = ExtResource("1_5vs2b")
-speed = 130.0
-tiling_sfx = ExtResource("5_dig_tiling")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671152387]

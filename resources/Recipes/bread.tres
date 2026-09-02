@@ -13,4 +13,5 @@ amount = 2
 script = ExtResource("3_04csj")
 ingredients = Array[ExtResource("1_00lge")]([SubResource("Resource_mglxy")])
 icon = ExtResource("1_04csj")
+display_name = "Bread"
 metadata/_custom_type_script = "uid://boaen1ci0mbxr"

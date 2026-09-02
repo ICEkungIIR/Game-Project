@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://beokt2xr2jmo"]
+
+[ext_resource type="Script" uid="uid://doch5nwsueijm" path="res://scripts/recipe_row.gd" id="1_dro5q"]
+
+[node name="RecipeRow" type="Button" unique_id=946575503 node_paths=PackedStringArray("icon_rect", "name_label")]
+custom_minimum_size = Vector2(0, 48)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dro5q")
+icon_rect = NodePath("HBoxContainer/Icon")
+name_label = NodePath("HBoxContainer/NameLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=424938206]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1674768221]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=290479054]
+layout_mode = 2
