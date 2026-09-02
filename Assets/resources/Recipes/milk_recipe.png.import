@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lf7wfxjunh6i"
-path="res://.godot/imported/milk.png-d39589f09817d1eec7ce3e06d0ab7af9.ctex"
+path="res://.godot/imported/milk_recipe.png-f02660968fe43d187c7df5954d4f0f31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/resources/Recipes/milk.png"
-dest_files=["res://.godot/imported/milk.png-d39589f09817d1eec7ce3e06d0ab7af9.ctex"]
+source_file="res://Assets/resources/Recipes/milk_recipe.png"
+dest_files=["res://.godot/imported/milk_recipe.png-f02660968fe43d187c7df5954d4f0f31.ctex"]
 
 [params]
 

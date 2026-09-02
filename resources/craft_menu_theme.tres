@@ -3,6 +3,8 @@
 [ext_resource type="FontFile" uid="uid://b5fakr0tqhml5" path="res://docs/ByteBounce.ttf" id="1_j35qm"]
 
 [resource]
+default_base_scale = 0.44
 default_font = ExtResource("1_j35qm")
+default_font_size = 32
 Label/font_sizes/font_size = 16
 Label/fonts/font = ExtResource("1_j35qm")
