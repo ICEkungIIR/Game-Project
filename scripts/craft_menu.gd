@@ -11,8 +11,8 @@ extends Control
 var current_category: String = "food"
 var selected_recipe: Recipe = null
 
-const RECIPE_ROW_SCENE := preload("res://scenes/UI/recipe_row.tscn")
-const INGREDIENT_ROW_SCENE := preload("res://scenes/UI/ingredient_row.tscn")
+const RECIPE_ROW_SCENE := preload("res://scenes/ui/recipe_row.tscn")
+const INGREDIENT_ROW_SCENE := preload("res://scenes/ui/ingredient_row.tscn")
 
 
 func _ready() -> void:

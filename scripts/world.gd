@@ -18,8 +18,8 @@ func _ready() -> void:
 	Farm.register_ground($Tilemap/GrassLayer, $Tilemap/SoilLayer, $Tilemap/WateredSoilLayer)
 
 	Quota.quota_paid.connect(_on_quota_paid)
-	Quota.game_won.connect(_on_game_won)
-	Quota.game_over.connect(_on_game_over)
+	#Quota.game_won.connect(_on_game_won)
+	#Quota.game_over.connect(_on_game_over)
 
 func _on_crafted(recipe_id: String, amount: int) -> void:
 	print("Crafted %s x%d" % [recipe_id, amount])
