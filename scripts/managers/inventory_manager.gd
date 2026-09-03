@@ -7,6 +7,7 @@ extends Node
 signal inventory_changed(item_id: String, new_amount: int)
 signal hotbar_changed(index: int, item_id: String)
 signal hotbar_selected(index: int, item_id: String)
+signal item_obtained(item_id: String, amount: int)
 
 # item_id -> quantity
 var items: Dictionary = {}
@@ -40,6 +41,7 @@ func add_item(item_id: String, amount: int = 1) -> void:
 	var cap: int = max_stack.get(item_id, 99)
 	items[item_id] = min(current + amount, cap)
 	inventory_changed.emit(item_id, items[item_id])
+	item_obtained.emit(item_id, amount)
 
 
 func remove_item(item_id: String, amount: int = 1) -> bool:

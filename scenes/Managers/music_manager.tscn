@@ -8,4 +8,3 @@ script = ExtResource("1_music")
 farm_track = ExtResource("3_64p8j")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=588493700]
-volume_db = -15.0

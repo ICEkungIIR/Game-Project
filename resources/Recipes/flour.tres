@@ -13,6 +13,6 @@ amount = 2
 script = ExtResource("3_ic3kr")
 recipe_id = "flour"
 ingredients = Array[ExtResource("1_flour_ing")]([SubResource("Resource_wheat_entry")])
-sell_price = 8
+sell_price = 20
 icon = ExtResource("1_ic3kr")
 display_name = "Flour"

@@ -75,7 +75,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.keycode == KEY_J:
 			Stats.use_stamina(10.0)
 	if event.is_action_pressed("debug_skip_day"):
-		TimeM.next_day()  # skip a day to watch crop growth without waiting
+		Transition.play_day_end_transition()  # fade through_night, then TimeM.next_day()
 	if event.is_action_pressed("debug_add_craft_ingredients"):
 		# TEMP: เติมวัตถุดิบเทสระบบคราฟ — ลบทิ้งทีหลังได้
 		Inventory.add_item("flour", 10)
@@ -85,6 +85,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("craft_menu"):
 		get_tree().call_group("craft_menu", "toggle_menu")
+		return
+
+	if event.is_action_pressed("open_settings"):
+		get_tree().call_group("hud", "toggle_settings")
 		return
 
 	if is_performing_action:

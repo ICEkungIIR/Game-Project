@@ -11,14 +11,23 @@ extends CanvasLayer
 
 @onready var character_panel: Control = $CharacterPanel
 @onready var inventory_panel: Control = $InventoryPanel
+@onready var settings_panel: Control = $SettingsPanel
 
 
 func _ready() -> void:
+	add_to_group("hud")
 	SellUI.opened.connect(_update_character_panel_visibility)
 	SellUI.closed.connect(_update_character_panel_visibility)
 	inventory_panel.visibility_changed.connect(_update_character_panel_visibility)
+	settings_panel.visibility_changed.connect(_update_character_panel_visibility)
 	_update_character_panel_visibility()
 
 
+## Called via get_tree().call_group("hud", "toggle_settings") — e.g. from
+## the "open_settings" (Esc) input action in player.gd.
+func toggle_settings() -> void:
+	settings_panel.visible = not settings_panel.visible
+
+
 func _update_character_panel_visibility() -> void:
-	character_panel.visible = not SellUI.is_open
+	character_panel.visible = not SellUI.is_open and not settings_panel.visible

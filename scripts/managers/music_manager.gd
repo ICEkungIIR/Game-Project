@@ -22,7 +22,7 @@ func play_track(track: AudioStream, fade_in: bool = true) -> void:
 	player.play()
 	if fade_in:
 		var tween := create_tween()
-		tween.tween_property(player, "volume_db", 0.0, 1.5)
+		tween.tween_property(player, "volume_db", -15.0, 1.5)
 
 
 func stop() -> void:

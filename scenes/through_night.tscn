@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b4uqbkxynn7yx"]
+
+[ext_resource type="VideoStream" uid="uid://c4lckfxue3yoi" path="res://Assets/video/through_night.ogv" id="1_fba4i"]
+
+[node name="Control" type="Control" unique_id=1588459791]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=353137701]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_fba4i")
+volume_db = -51.31
+speed_scale = 3.5
+autoplay = true
+expand = true

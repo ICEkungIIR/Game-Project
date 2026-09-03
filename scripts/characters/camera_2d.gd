@@ -11,11 +11,10 @@ func _ready() -> void:
 	target_zoom = zoom
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_MINUS:
-			zoom_camera(zoom_step)   # ซูมออก
-		elif event.keycode == KEY_EQUAL:  # ปุ่ม + (ส่วนใหญ่ + อยู่บน key เดียวกับ =)
-			zoom_camera(-zoom_step)  # ซูมเข้า
+	if event.is_action_pressed("zoom_out"):
+		zoom_camera(zoom_step)   # ซูมออก
+	elif event.is_action_pressed("zoom_in"):
+		zoom_camera(-zoom_step)  # ซูมเข้า
 
 func zoom_camera(amount: float) -> void:
 	var new_zoom_value = clamp(target_zoom.x + amount, min_zoom, max_zoom)
