@@ -76,6 +76,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			Stats.use_stamina(10.0)
 	if event.is_action_pressed("debug_skip_day"):
 		Transition.play_day_end_transition()  # fade through_night, then TimeM.next_day()
+	if event.is_action_pressed("debug_skip_to_quota_day"):
+		Transition.play_skip_to_quota_day_transition()  # fade through_night, then fast-forward to Quota.due_day()
 	if event.is_action_pressed("debug_add_craft_ingredients"):
 		# TEMP: เติมวัตถุดิบเทสระบบคราฟ — ลบทิ้งทีหลังได้
 		Inventory.add_item("flour", 10)
