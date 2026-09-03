@@ -1,7 +1,20 @@
 extends Node
 ## Autoload — ตั้งชื่อ "RecipeDB" ใน Project Settings > Autoload
+##
+## Was previously a runtime DirAccess scan of resources/Recipes/ — switched
+## to explicit preload() (same fix already applied to CropDB/ToolDB) because
+## runtime directory-listing of res:// is fragile across exported builds —
+## it works in the editor but returns nothing in the exported web build,
+## which is why the craft menu showed empty with no recipes.
+##
+## Add a new recipe: add its .tres path to RECIPE_RESOURCES below.
 
-const RECIPE_FOLDER := "res://resources/Recipes/"
+const RECIPE_RESOURCES: Array[Recipe] = [
+	preload("res://resources/Recipes/bread.tres"),
+	preload("res://resources/Recipes/flour.tres"),
+	preload("res://resources/Recipes/milk.tres"),
+	preload("res://resources/Recipes/soup.tres"),
+]
 
 var recipes: Array[Recipe] = []
 
@@ -9,20 +22,8 @@ func _ready() -> void:
 	_load_all_recipes()
 
 func _load_all_recipes() -> void:
-	var dir := DirAccess.open(RECIPE_FOLDER)
-	if dir == null:
-		push_warning("RecipeDB: ไม่พบโฟลเดอร์ %s" % RECIPE_FOLDER)
-		return
-
-	dir.list_dir_begin()
-	var file_name := dir.get_next()
-	while file_name != "":
-		if file_name.ends_with(".tres"):
-			var res := load(RECIPE_FOLDER + file_name)
-			if res is Recipe:
-				recipes.append(res)
-		file_name = dir.get_next()
-	dir.list_dir_end()
+	for r in RECIPE_RESOURCES:
+		recipes.append(r)
 
 func get_recipe(recipe_id: String) -> Recipe:
 	for r in recipes:

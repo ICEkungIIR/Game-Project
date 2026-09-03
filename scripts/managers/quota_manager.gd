@@ -25,7 +25,7 @@ const DAYS_PER_CYCLE: int = 21
 
 ## Fixed quota for each cycle, in order. Cycle 1 = QUOTA_AMOUNTS[0], etc.
 ## The game is won once the last one is paid.
-const QUOTA_AMOUNTS: Array[int] = [1000, 2000,3000 , 4000]
+const QUOTA_AMOUNTS: Array[int] = [1000, 10000, 100000 , 1000000]
 
 ## How many days out a "due soon" warning fires (once per day in that
 ## window, since day_started only fires once per day anyway).

@@ -74,14 +74,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			Stats.take_damage(10.0)
 		elif event.keycode == KEY_J:
 			Stats.use_stamina(10.0)
-		elif event.keycode == KEY_K:
-			TimeM.next_day()  # skip a day to watch crop growth without waiting
-		elif event.keycode == KEY_L:
-			# TEMP: เติมวัตถุดิบเทสระบบคราฟ — ลบทิ้งทีหลังได้
-			Inventory.add_item("flour", 10)
-			Inventory.add_item("carrot", 10)
-			Inventory.add_item("milk", 10)
-			print("Debug: เติมวัตถุดิบคราฟแล้ว")
+	if event.is_action_pressed("debug_skip_day"):
+		TimeM.next_day()  # skip a day to watch crop growth without waiting
+	if event.is_action_pressed("debug_add_craft_ingredients"):
+		# TEMP: เติมวัตถุดิบเทสระบบคราฟ — ลบทิ้งทีหลังได้
+		Inventory.add_item("flour", 10)
+		Inventory.add_item("carrot", 10)
+		Inventory.add_item("milk", 10)
+		print("Debug: เติมวัตถุดิบคราฟแล้ว")
 
 	if event.is_action_pressed("craft_menu"):
 		get_tree().call_group("craft_menu", "toggle_menu")
