@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c40ve2ferd5cb"]
 
 [ext_resource type="PackedScene" uid="uid://cxjqmp8v1n0j2" path="res://scenes/hud/coin_HUD.tscn" id="1_5ip4n"]
-[ext_resource type="PackedScene" path="res://scenes/hud/quota_HUD.tscn" id="8_quotahud"]
 [ext_resource type="PackedScene" uid="uid://30hi32yoxt8t" path="res://scenes/hud/character_panel.tscn" id="1_ucsqe"]
 [ext_resource type="PackedScene" uid="uid://3invk7p4lps5" path="res://scenes/hud/time_HUD.tscn" id="2_l8xe2"]
 [ext_resource type="PackedScene" uid="uid://cuuth32kb1cfr" path="res://scenes/hud/day_HUD.tscn" id="3_0qpk7"]
@@ -9,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://ktqjx7awd2ph" path="res://Assets/hud/inventory_04_icon.png" id="5_l8xe2"]
 [ext_resource type="PackedScene" uid="uid://fumpk4cb8etj" path="res://scenes/ui/inventory.tscn" id="6_invpanel"]
 [ext_resource type="Script" uid="uid://bndumvxep3v65" path="res://scripts/ui/hud.gd" id="7_hudscript"]
+[ext_resource type="PackedScene" uid="uid://dh0gwauxs7lou" path="res://scenes/hud/quota_HUD.tscn" id="8_quotahud"]
+[ext_resource type="PackedScene" uid="uid://cky6uv8o0iiei" path="res://scenes/settings_panel.tscn" id="9_settingspanel"]
+[ext_resource type="PackedScene" path="res://scenes/hud/controls_hint.tscn" id="10_controlshint"]
+[ext_resource type="Script" path="res://scripts/ui/item_notify_stack.gd" id="11_itemnotifystack"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1842482411]
 script = ExtResource("7_hudscript")
@@ -77,3 +80,23 @@ theme_override_font_sizes/font_size = 128
 text = "press I"
 
 [node name="InventoryPanel" parent="." unique_id=2001887432 instance=ExtResource("6_invpanel")]
+
+[node name="SettingsPanel" parent="." unique_id=-1177233895 instance=ExtResource("9_settingspanel")]
+visible = false
+
+[node name="ControlsHint" parent="." unique_id=1095733863 instance=ExtResource("10_controlshint")]
+display_duration = 30.0
+
+[node name="ItemNotifyStack" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -220.0
+offset_right = 500.0
+offset_bottom = -24.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 8
+script = ExtResource("11_itemnotifystack")
